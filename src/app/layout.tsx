@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import ThemeClient from "@/components/commons/ThemeClient";
+
+import StyledComponentsRegistry from "./lib/registry";
 
 export const metadata: Metadata = {
   title: "Magoyapp",
@@ -18,16 +21,14 @@ export default function RootLayout({
         {/*OpenGraph metadata*/}
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="Magoyapp" />
-        <meta
-          property="og:title"
-          content="Magoyapp | Front-end dev challenge"
-        />
-        <meta
-          property="og:description"
-          content="Magoyapp | Front-end dev challenge"
-        />
+        <meta property="og:title" content="Magoyapp | Front-end dev challenge" />
+        <meta property="og:description" content="Magoyapp | Front-end dev challenge" />
       </head>
-      <body>{children}</body>
+      <StyledComponentsRegistry>
+        <ThemeClient>
+          <body>{children}</body>
+        </ThemeClient>
+      </StyledComponentsRegistry>
     </html>
   );
 }
