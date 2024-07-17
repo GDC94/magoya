@@ -1,20 +1,10 @@
 import "@emotion/react";
-import {
-  COLORS,
-  QUERIES,
-  SIZES,
-  WEIGHTS,
-  type TypeThemeColors,
-  type TypeThemeQueries,
-  type TypeThemeSizes,
-  type TypeThemeWeights,
-} from "./themeParts";
+import { COLORS, QUERIES, SIZES, type TypeThemeColors, type TypeThemeQueries, type TypeThemeSizes } from "./themeParts";
 
 export const theme = {
   colors: COLORS,
   size: SIZES,
   queries: QUERIES,
-  weights: WEIGHTS,
 };
 
 type MainTheme = typeof theme;
@@ -24,6 +14,5 @@ declare module "@emotion/react" {
     colors: TypeThemeColors;
     size: TypeThemeSizes;
     queries: TypeThemeQueries;
-    weights: TypeThemeWeights;
   }
 }

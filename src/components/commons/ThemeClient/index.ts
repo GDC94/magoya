@@ -1,1 +1,1 @@
-export { default } from "./ThemeClient";
+export { default } from "./themeClient";

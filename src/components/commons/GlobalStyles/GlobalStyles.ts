@@ -11,7 +11,6 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
 }
 html {
-  font-family: 'Nastup', sans-serif;
   scrollbar-gutter: stable;
   overscroll-behavior-y: none;
 }
@@ -26,16 +25,16 @@ body {
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
   margin: 0;
   padding: 0;
   overscroll-behavior-y: none;
-  font-family: 'Nastup',sans-serif;
-  background-color: #e7e4df;
+  background-color: #fffffe;
 
   
 
   &.enable-scroll{
-    overflow-y: scroll;
+    overflow-y: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
 

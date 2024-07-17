@@ -4,7 +4,17 @@ export const LayoutContainer = styled.div`
   width: 100%;
   height: auto;
   min-height: 100vh;
-  cursor: crosshair;
+  height: 100dvh;
+  height: 100vh;
+  background-color: red;
+  margin: 0 auto;
+  @media screen and (max-width: 1440px) {
+    max-width: 95%;
+  }
+  @media print {
+    width: 100%;
+    min-width: 100%;
+  }
 `;
 
 export const LayoutWrapper = styled.div`

@@ -38,7 +38,7 @@ export const SIZES = {
   "7.25": "7.25rem",
   "7.5": "7.5rem",
   "7.75": "7.75rem",
-  "8": "8",
+  "8": "8rem",
 };
 
 export type TypeThemeSizes = typeof SIZES;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
+import { GeistSans } from "geist/font/sans";
+
 import ThemeClient from "@/components/commons/ThemeClient";
 
 import StyledComponentsRegistry from "./lib/registry";
@@ -16,9 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={GeistSans.className}>
       <head>
-        {/*OpenGraph metadata*/}
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="Magoyapp" />
         <meta property="og:title" content="Magoyapp | Front-end dev challenge" />
