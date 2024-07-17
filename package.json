@@ -17,13 +17,19 @@
     "formatter": "npm run lint --fix"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.51.3",
     "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@emotion/types": "^0.7.0",
     "@next/eslint-plugin-next": "^14.2.5",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
