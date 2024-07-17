@@ -13,7 +13,8 @@
     "start": "next start",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx --report-unused-disable-directives --max-warnings 0",
     "generate": "plop",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "formatter": "npm run lint --fix"
   },
   "dependencies": {
     "next": "14.2.5",
@@ -23,12 +24,14 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@next/eslint-plugin-next": "^14.2.5",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vercel/style-guide": "^6.0.0",
     "autoprefixer": "^10.4.19",
+    "babel-jest": "^29.7.0",
     "eslint": "^8",
     "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",
