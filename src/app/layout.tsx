@@ -15,8 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon */}
-
         {/*OpenGraph metadata*/}
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="Magoyapp" />
