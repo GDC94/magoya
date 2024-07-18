@@ -1,8 +1,10 @@
 import * as React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
+import CustomInput from "../atoms/Input/Input";
+
 import * as Styled from "./Form.styled";
-import { type FormFields } from "./Form.types";
+import { accountNumbeRegex, initialBalanceRegex, type FormFields } from "./Form.types";
 
 function Form() {
   const {
@@ -24,61 +26,69 @@ function Form() {
       console.log(data);
     } catch (error) {
       setError("root", {
-        type: "manual",
         message: "There was an error while submitting the form",
       });
     }
   };
 
-  const regex = /^\d{4}$/;
-
   return (
     <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>
-      {/* Name field */}
-      <Styled.Label htmlFor="textInput">Name:</Styled.Label>
-      <input
-        type="text"
+      <CustomInput
+        name="name"
+        register={register}
         placeholder="Name"
-        {...register("name", {
+        validation={{
           required: "This is a required field",
-          validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
-        })}
+          validate: (value) => value.toString().length > 2 || "This field must be longer than 2 characters",
+        }}
+        errors={errors}
       />
-      {errors.name ? <Styled.ErrorMessage>{errors.name.message}</Styled.ErrorMessage> : null}
 
-      {/* LastName field */}
-      <Styled.Label htmlFor="textInput">Lastname:</Styled.Label>
-      <input
-        {...register("lastName")}
-        type="text"
+      <CustomInput
+        name="lastName"
+        register={register}
         placeholder="Lastname"
-        {...register("lastName", {
+        validation={{
           required: "This is a required field",
-          validate: (value) => value.length > 3 || "This field must be longer than 3 characters",
-        })}
+          validate: (value) => value.toString().length > 3 || "This field must be longer than 3 characters",
+        }}
+        errors={errors}
       />
-      {errors.lastName ? <Styled.ErrorMessage>{errors.lastName.message}</Styled.ErrorMessage> : null}
 
-      {/* Initial balance field */}
-      <Styled.Label htmlFor="numberInput">Initial balance:</Styled.Label>
-      <input
-        {...register("initialBalance")}
-        type="number"
+      <CustomInput
+        name="initialBalance"
+        register={register}
         placeholder="Put your initial balance"
-        {...register("lastName", {
+        validation={{
           required: "This is a required field",
           validate: (value) => {
-            if (regex.test(value)) {
+            if (!initialBalanceRegex.test(Number(value).toString())) {
               return "Incorrect format";
             }
 
             return true;
           },
-        })}
+        }}
+        errors={errors}
       />
-      {errors.lastName ? <Styled.ErrorMessage>{errors.lastName.message}</Styled.ErrorMessage> : null}
 
-      {/* Button submit */}
+      <CustomInput
+        name="accountNumber"
+        register={register}
+        placeholder="Choose a account number"
+        validation={{
+          required: "This is a required field",
+          validate: (value) => {
+            if (!accountNumbeRegex.test(Number(value).toString())) {
+              return "Incorrect format";
+            }
+
+            return true;
+          },
+        }}
+        errors={errors}
+      />
+
       <Styled.SubmitButton disabled={isSubmitting} type="submit">
         Enviar
       </Styled.SubmitButton>

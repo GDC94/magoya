@@ -28,3 +28,9 @@ export const SubmitButton = styled.button`
     background-color: #0056b3;
   }
 `;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+`;

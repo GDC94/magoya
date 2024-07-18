@@ -8,3 +8,7 @@ export const schema = z.object({
 });
 
 export type FormFields = z.infer<typeof schema>;
+
+export const initialBalanceRegex = /^(?:[0-9]{1,7}|10000000)$/;
+
+export const accountNumbeRegex = /^\d{4}$/;
