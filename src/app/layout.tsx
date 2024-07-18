@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { GeistSans } from "geist/font/sans";
 
-import ThemeClient from "@/components/commons/ThemeClient";
+import ThemeClient from "@/components/ui/commons/ThemeClient";
 
 import StyledComponentsRegistry from "./lib/registry";
 

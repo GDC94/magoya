@@ -3,3 +3,9 @@ export const FlexBasicConfig = {
   alignItems: "center",
   justifyContent: "center",
 } as const;
+
+export const FlexSpaceBetween = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "between",
+} as const;
