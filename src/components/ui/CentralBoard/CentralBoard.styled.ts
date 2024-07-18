@@ -25,6 +25,7 @@ export const Left = styled.div`
   background-color: ${({ theme }) => theme.colors.secondary[100]};
   border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   border-radius: 10px;
+  padding: 1rem;
 `;
 
 export const Right = styled.div`

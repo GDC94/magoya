@@ -83,6 +83,7 @@ module.exports = {
         next: ["const", "let", "var"],
       },
     ],
+    "@typescript-eslint/no-misused-promises":"off",
     "react/jsx-sort-props": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-call": "off",
