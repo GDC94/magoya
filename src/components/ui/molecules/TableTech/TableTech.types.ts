@@ -28,7 +28,7 @@ export const TOOLS_LEFT: Tool[] = [
 
 export const TOOLS_RIGHT: Tool[] = [
   {
-    name: "React Query",
+    name: "Tanstack Query",
     id: 6,
   },
   {

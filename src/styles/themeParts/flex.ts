@@ -4,6 +4,13 @@ export const FlexBasicConfig = {
   justifyContent: "center",
 } as const;
 
+export const FlexBasicConfigColumn = {
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "center",
+  flexDirection: "column",
+} as const;
+
 export const FlexStartConfig = {
   display: "flex",
   alignItems: "flex-start",

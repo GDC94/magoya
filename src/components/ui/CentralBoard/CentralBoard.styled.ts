@@ -13,6 +13,8 @@ export const CentralBoardContainer = styled.div`
   transform: translate(-50%, -50%);
   ${FlexSpaceBetween}
   gap: 1rem;
+  width: 1200px;
+  max-width: 95%;
 
   @media screen and (max-width: 320px) {
     max-width: 95%;

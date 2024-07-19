@@ -7,7 +7,6 @@ export const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-
   @media print {
     width: 100%;
     min-width: 100%;

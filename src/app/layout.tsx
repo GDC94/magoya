@@ -26,14 +26,8 @@ export default function RootLayout({
       <head>
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="Magoyapp" />
-        <meta
-          property="og:title"
-          content="Magoyapp | Front-end dev challenge"
-        />
-        <meta
-          property="og:description"
-          content="Magoyapp | Front-end dev challenge"
-        />
+        <meta property="og:title" content="Magoyapp | Front-end dev challenge" />
+        <meta property="og:description" content="Magoyapp | Front-end dev challenge" />
       </head>
       <StyledComponentsRegistry>
         <ThemeClient>

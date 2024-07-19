@@ -2,7 +2,7 @@ import * as React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import CustomInput from "../atoms/Input/Input";
+import CustomInput from "@/components/ui/atoms/Input/Input";
 
 import * as Styled from "./Form.styled";
 import { accountNumbeRegex, initialBalanceRegex, schema, type FormFields } from "./Form.types";
