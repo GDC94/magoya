@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import { QUERIES } from "@/styles";
-import { FlexBasicConfigColumn } from "@/styles/themeParts/flex";
+import { FlexBasicConfigColumn, FlexSpaceBetween } from "@/styles/themeParts/flex";
 
 export const TransactionCardContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white[100]};
@@ -23,8 +23,15 @@ export const TransactionTitle = styled.h2`
   color: ${({ theme }) => theme.colors.dark[100]};
   font-weight: 600;
   letter-spacing: -2px;
-  line-height: 140%;
+  line-height: 120%;
 `;
+
+export const HeaderCard = styled.div`
+  width: 100%;
+  ${FlexSpaceBetween}
+`;
+
+export const Legends = styled.div``;
 
 export const InputsWrapper = styled.div`
   display: flex;

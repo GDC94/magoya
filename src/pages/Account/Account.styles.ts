@@ -30,6 +30,7 @@ export const AccountContainer = styled.div`
   @media print {
     width: 100%;
     min-width: 100%;
+    height: auto;
   }
 `;
 

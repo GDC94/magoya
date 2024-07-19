@@ -20,18 +20,17 @@ function CustomInput<T extends FieldValues>({
   placeholder,
   errors,
   validation,
-  options = [],
+  options, // new prop for select options
+  defaultValue, // add defaultValue prop
+  value, // add value prop for controlled components
 }: CustomInputProps<T>) {
   const errorMessage = errors[name]?.message as unknown as string;
 
   return (
     <Styled.InputWrapper>
       <Styled.Label htmlFor={name as string}>{label.charAt(0).toUpperCase() + label.slice(1)}</Styled.Label>
-      {type === "select" ? (
-        <Styled.Select id={name as string} {...register(name, validation)}>
-          <option value="" disabled selected hidden>
-            {placeholder}
-          </option>
+      {type === "select" && options ? (
+        <Styled.Select id={name as string} defaultValue={defaultValue} value={value} {...register(name, validation)}>
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}

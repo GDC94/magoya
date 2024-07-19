@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
 
+import { FlexBasicConfigColumn } from "@/styles/themeParts/flex";
+
 export const InputWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  ${FlexBasicConfigColumn}
   width: 100%;
   cursor: pointer;
 `;
 
 export const Input = styled.input`
-  padding: 10px;
-  font-size: 16px;
+  padding: ${({ theme }) => theme.size["0.75"]};
+  font-size: ${({ theme }) => theme.size["1"]};
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
@@ -29,12 +29,15 @@ export const Label = styled.label`
 
 export const ErrorMessage = styled.span`
   color: red;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.size["0.75"]};
 `;
 
 export const Select = styled.select`
   width: 100%;
-  padding: 0.5rem;
+  margin-top:  ${({ theme }) => theme.size["0.25"]};
+  padding: ${({ theme }) => theme.size["0.75"]};
   border: 1px solid #ccc;
   border-radius: 4px;
+  appearance: none;
+  background-color: white;
 `;

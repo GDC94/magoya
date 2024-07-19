@@ -2,11 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 
 import * as Styled from "./Logo.styled";
-
-interface LogoProps {
-  width?: number;
-  height?: number;
-}
+import { type LogoProps } from "./Logo.types";
 
 function Logo({ width = 30, height = 30 }: LogoProps) {
   return (

@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Card } from "@/components/ui/atoms/Card";
+
 import * as Styled from "./BalanceCard.styled";
 
 function BalanceCard() {
@@ -10,7 +12,8 @@ function BalanceCard() {
         <Styled.WelcomeSubMessage> Que bueno volver a verte!</Styled.WelcomeSubMessage>
       </Styled.HeroTop>
       <Styled.HeroBottom>
-        <Styled.BalanceTitle>Tu balance</Styled.BalanceTitle>
+        <Styled.BalanceTitle>Tu información</Styled.BalanceTitle>
+        <Card />
       </Styled.HeroBottom>
     </Styled.BalanceCardContainer>
   );

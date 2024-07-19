@@ -3,6 +3,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { CustomInput } from "@/components/ui/atoms/Input";
+import Logo from "@/components/ui/atoms/Logo/Logo";
 
 import * as Styled from "./TransactionCard.styled";
 import { type TransactionFormFields, transactionSchema } from "./TransactionCard.types";
@@ -16,7 +17,7 @@ function TransactionCard() {
   } = useForm<TransactionFormFields>({
     defaultValues: {
       amount: "",
-      transactionType: "deposit",
+      transactionType: "deposito",
     },
     resolver: zodResolver(transactionSchema),
   });
@@ -33,8 +34,14 @@ function TransactionCard() {
 
   return (
     <Styled.TransactionCardContainer>
-      <Styled.TransactionTitle>Depósitos y transferencias</Styled.TransactionTitle>
-      <Styled.TransactionHeader>Aquí podés depositar o transferir dinero de tu cuenta.</Styled.TransactionHeader>
+      <Styled.HeaderCard>
+        <Styled.Legends>
+          <Styled.TransactionTitle>Depósitos y transferencias</Styled.TransactionTitle>
+          <Styled.TransactionHeader>Aquí podés depositar o transferir dinero de tu cuenta.</Styled.TransactionHeader>
+        </Styled.Legends>
+        <Logo width={40} height={40} />
+      </Styled.HeaderCard>
+
       <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>
         <Styled.InputsWrapper>
           <CustomInput<TransactionFormFields>
@@ -42,7 +49,6 @@ function TransactionCard() {
             type="number"
             name="amount"
             register={register}
-            placeholder=""
             validation={{
               required: "This is a required field",
               validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
@@ -52,11 +58,11 @@ function TransactionCard() {
 
           <CustomInput<TransactionFormFields>
             type="select"
-            options={["deposit", "withdrawal"].map((option) => ({
+            options={["deposito", "transferencia"].map((option) => ({
               value: option,
               label: option,
             }))}
-            label=""
+            label="Depósito o transferencia"
             name="transactionType"
             register={register}
             placeholder=""

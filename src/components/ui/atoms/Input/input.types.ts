@@ -11,5 +11,7 @@ export interface CustomInputProps<T extends FieldValues> extends React.InputHTML
     required?: string | boolean;
     validate?: (value: T[Path<T>]) => boolean | string | Promise<boolean | string> | undefined;
   };
-  options?: { value: string; label: string }[];
+  options?: { value: string; label: string }[]; // new prop for select options
+  defaultValue?: string; // new prop for default value
+  value?: string; // new prop for controlled value
 }
