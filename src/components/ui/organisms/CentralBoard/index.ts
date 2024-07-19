@@ -1,1 +1,1 @@
-export * from "./CentralBoard";
+export { default as CentralBoard } from "./CentralBoard";

@@ -27,27 +27,15 @@ function CustomInput<T extends FieldValues>({
 }: CustomInputProps<T> & {
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }) {
-  const errorMessage = errors[name]
-    ?.message as unknown as string;
+  const errorMessage = errors[name]?.message as unknown as string;
 
   return (
     <Styled.InputWrapper>
-      <Styled.Label htmlFor={name as string}>
-        {label.charAt(0).toUpperCase() +
-          label.slice(1)}
-      </Styled.Label>
+      <Styled.Label htmlFor={name as string}>{label.charAt(0).toUpperCase() + label.slice(1)}</Styled.Label>
       {type === "select" && options ? (
-        <Styled.Select
-          id={name as string}
-          defaultValue={defaultValue}
-          value={value}
-          {...register(name, validation)}
-        >
+        <Styled.Select id={name as string} defaultValue={defaultValue} value={value} {...register(name, validation)}>
           {options.map((option) => (
-            <option
-              key={option.value}
-              value={option.value}
-            >
+            <option key={option.value} value={option.value}>
               {option.label}
             </option>
           ))}
@@ -61,11 +49,7 @@ function CustomInput<T extends FieldValues>({
           {...register(name, validation)}
         />
       )}
-      {errorMessage ? (
-        <Styled.ErrorMessage>
-          {errorMessage}
-        </Styled.ErrorMessage>
-      ) : null}
+      {errorMessage ? <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage> : null}
     </Styled.InputWrapper>
   );
 }
