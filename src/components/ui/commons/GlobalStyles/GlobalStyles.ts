@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+import { QUERIES } from "@/styles";
+
 const GlobalStyles = createGlobalStyle`
 *,
 *::before,
@@ -32,7 +34,6 @@ font-family: "Kanit", sans-serif;
   overscroll-behavior-y: none;
   background-color: hsl(158.45, 81.5%, 57.85%);
 
-  
 
   &.enable-scroll{
     overflow-y: hidden;
@@ -42,6 +43,12 @@ font-family: "Kanit", sans-serif;
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+
+
+  @media ${QUERIES.tabletAndSmaller} {
+    overflow-y: scroll !important;
+    height: auto;
   }
 }
 

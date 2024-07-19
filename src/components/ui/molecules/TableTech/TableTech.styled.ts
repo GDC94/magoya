@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { FlexStartConfig } from "@/styles/themeParts/flex";
+import { QUERIES } from "@/styles";
 
 export const MiddleLeft = styled.div`
   width: 100%;
@@ -68,6 +69,12 @@ export const ItemsBack = styled.div`
   gap: 10px;
   ${FlexStartConfig}
   padding-left: ${({ theme }) => theme.size["0.5"]};
+
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-direction: column;
+    gap: 0px;
+    padding-left: 0px;
+  }
 `;
 
 export const Item = styled.span`

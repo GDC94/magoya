@@ -1,3 +1,4 @@
+import { QUERIES } from "@/styles";
 import styled from "@emotion/styled";
 
 export const LayoutContainer = styled.div`
@@ -9,6 +10,9 @@ export const LayoutContainer = styled.div`
   @media print {
     width: 100%;
     min-width: 100%;
+  }
+  @media ${QUERIES.tabletAndSmaller} {
+    height: 110vh;
   }
 `;
 

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { FlexBasicConfig, FlexSpaceBetween } from "@/styles/themeParts/flex";
+import { QUERIES } from "@/styles";
 
 export const CentralBoardContainer = styled.div`
   width: 80%;
@@ -16,8 +17,8 @@ export const CentralBoardContainer = styled.div`
   width: 1200px;
   max-width: 95%;
 
-  @media screen and (max-width: 320px) {
-    max-width: 95%;
+  @media ${QUERIES.tabletAndSmaller} {
+    flex-direction: column;
   }
 `;
 
@@ -29,6 +30,11 @@ export const Left = styled.div`
   border-bottom: 7px solid ${({ theme }) => theme.colors.dark[100]};
   display: flex;
   flex-direction: column;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 95%;
+    border-bottom: 3px solid ${({ theme }) => theme.colors.dark[100]};
+  }
 `;
 
 export const MiddleLeft = styled.div`
@@ -36,6 +42,9 @@ export const MiddleLeft = styled.div`
   height: 100%;
   border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
   ${FlexSpaceBetween}
+  @media ${QUERIES.tabletAndSmaller} {
+   flex-direction: column;
+  }
 `;
 
 export const ButtonsRepositories = styled.div`
@@ -43,38 +52,39 @@ export const ButtonsRepositories = styled.div`
   height: 100%;
   border-right: 1px solid ${({ theme }) => theme.colors.dark[100]};
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: flex-start;
   flex-direction: column;
-  padding: 2rem;
+  padding: ${({ theme }) => theme.size["1"]};
+  gap: ${({ theme }) => theme.size["0.25"]};
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 100%;
+    border-right: 0px;
+    padding-bottom: 0px;
+  }
 `;
 
 export const MagicButtonContent = styled.div`
   height: 100%;
   width: 50%;
+  ${FlexBasicConfig}
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 100%;
+    justify-content: flex-end;
+  }
 `;
 
 export const ButtonLink = styled.a`
   width: auto;
-  max-width: 170px;
-  min-width: 170px;
-  background-color: ${({ theme }) => theme.colors.dark[100]};
-  border: 2px solid;
-  border-radius: ${({ theme }) => theme.size["3"]};
-  cursor: "pointer";
-  outline: none;
-  display: inline-block;
-  text-align: center;
-  padding: ${(props) => props.theme.size["0.5"]} ${(props) => props.theme.size["1"]};
   transition: background-color 0.3s;
   transition: 1s;
-  color: white;
-  font-weight: 600;
+  ${FlexBasicConfig}
+  gap: 10px;
 
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.white[100]};
-    border-color: ${({ theme }) => theme.colors.dark[100]};
-    color: ${({ theme }) => theme.colors.dark[100]};
-  }
+  color: ${({ theme }) => theme.colors.dark[100]};
+  font-weight: 600;
+  cursor: pointer;
 `;
 
 export const MiddleRight = styled.div`
@@ -91,8 +101,12 @@ export const Right = styled.div`
   height: 100%;
   ${FlexBasicConfig}
   flex-direction: column;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white[100]};
   border: 3px solid ${({ theme }) => theme.colors.dark[100]};
+
+  @media ${QUERIES.tabletAndSmaller} {
+    width: 95%;
+  }
 `;
 
 export const HeaderForm = styled.div`
@@ -108,6 +122,12 @@ export const Title = styled.p`
   text-align: flex-start;
   line-height: 98%;
   letter-spacing: -3.2px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+  }
 `;
 
 export const Brand = styled.span`

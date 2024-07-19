@@ -7,6 +7,7 @@ export const TransactionCardContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white[100]};
   border: 2px solid ${({ theme }) => theme.colors.dark[100]};
   border-left: 0px;
+  border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
   padding: ${({ theme }) => theme.size["1"]};
   height: 100%;
   width: 100%;
@@ -50,7 +51,6 @@ export const TransactionHeader = styled.h5`
 
 export const FormWrapper = styled.form`
   padding: ${({ theme }) => theme.size["1"]};
-  border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   height: 85%;
   width: 100%;
 
@@ -62,7 +62,6 @@ export const FormWrapper = styled.form`
 export const FooterCard = styled.div`
   background-color: hsl(262.25deg 58.17% 70%);
   border: 1px solid ${({ theme }) => theme.colors.dark[100]};
-  border-top: 0px;
   height: 15%;
   width: 100%;
 `;

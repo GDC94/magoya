@@ -48,9 +48,11 @@ export const BalanceContainer = styled.div`
   width: 40%;
   height: 100%;
   ${FlexSpaceBetween};
+  border-bottom: 3px solid ${({ theme }) => theme.colors.dark[100]};
 
   @media ${QUERIES.tabletAndSmaller} {
     width: 100%;
+    border-bottom: 0px;
   }
 `;
 

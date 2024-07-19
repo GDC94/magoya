@@ -14,7 +14,7 @@ function MagnetButton() {
 
   return (
     <StyledMotionButton ref={ref}>
-      <StyledArrowTop size={90} />
+      <StyledArrowTop size={75} />
 
       <StyledYellowCircle />
 
@@ -41,7 +41,7 @@ function MagnetButton() {
   );
 }
 
-function MagnetButtonExample() {
+function MagnetButtonComponent() {
   return (
     <GridContainer>
       <MagnetButton />
@@ -49,4 +49,4 @@ function MagnetButtonExample() {
   );
 }
 
-export default MagnetButtonExample;
+export default MagnetButtonComponent;

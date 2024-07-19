@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-import { ArrowTop } from "../../commons/imagery";
+import { ArrowTop } from "@/components/ui/commons/imagery";
 
 export const GridContainer = styled.div`
   display: grid;
@@ -57,7 +57,7 @@ export const StyledTextPath = styled.textPath`
   font-weight: bold;
   text-transform: uppercase;
   transition: opacity 700ms ease-out;
-  transform: translateX(-50%) translateY(-50%); /* Centra el texto dentro del círculo */
+  transform: translateX(-50%) translateY(-50%);
 `;
 
 export const StyledYellowCircle = styled.div`
@@ -67,6 +67,6 @@ export const StyledYellowCircle = styled.div`
   transform-origin: center;
   transform: scale(0);
   border-radius: 50%;
-  background-color: hsl(47.76deg 100% 50%); /* Ajusta el color de fondo */
+  background-color: hsl(47.76deg 100% 50%);
   transition: transform 300ms ease-out;
 `;

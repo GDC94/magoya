@@ -2,11 +2,9 @@ import styled from "@emotion/styled";
 
 export const DashboardContainer = styled.div`
   width: 100%;
-  height: 100dvh;
-  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   @media print {
     width: 100%;
     min-width: 100%;
