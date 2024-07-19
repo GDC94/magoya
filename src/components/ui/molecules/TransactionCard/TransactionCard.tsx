@@ -15,8 +15,8 @@ function TransactionCard() {
     formState: { errors, isSubmitting },
   } = useForm<TransactionFormFields>({
     defaultValues: {
-      initialBalance: "",
-      accountNumber: "",
+      amount: "",
+      transactionType: "deposit",
     },
     resolver: zodResolver(transactionSchema),
   });
@@ -33,30 +33,40 @@ function TransactionCard() {
 
   return (
     <Styled.TransactionCardContainer>
+      <Styled.TransactionTitle>Depósitos y transferencias</Styled.TransactionTitle>
+      <Styled.TransactionHeader>Aquí podés depositar o transferir dinero de tu cuenta.</Styled.TransactionHeader>
       <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>
-        <CustomInput
-          label=""
-          name="initialBalance"
-          register={register}
-          placeholder=""
-          validation={{
-            required: "This is a required field",
-            validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
-          }}
-          errors={errors}
-        />
+        <Styled.InputsWrapper>
+          <CustomInput<TransactionFormFields>
+            label="Colocá el monto de la operación"
+            type="number"
+            name="amount"
+            register={register}
+            placeholder=""
+            validation={{
+              required: "This is a required field",
+              validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
+            }}
+            errors={errors}
+          />
 
-        <CustomInput
-          label=""
-          name="initialBalance"
-          register={register}
-          placeholder=""
-          validation={{
-            required: "This is a required field",
-            validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
-          }}
-          errors={errors}
-        />
+          <CustomInput<TransactionFormFields>
+            type="select"
+            options={["deposit", "withdrawal"].map((option) => ({
+              value: option,
+              label: option,
+            }))}
+            label=""
+            name="transactionType"
+            register={register}
+            placeholder=""
+            validation={{
+              required: "This is a required field",
+              validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
+            }}
+            errors={errors}
+          />
+        </Styled.InputsWrapper>
         <Styled.ButtonSubmit disabled={isSubmitting} type="submit">
           Enviar
         </Styled.ButtonSubmit>

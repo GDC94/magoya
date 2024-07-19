@@ -10,7 +10,7 @@ function BalanceCard() {
         <Styled.WelcomeSubMessage> Que bueno volver a verte!</Styled.WelcomeSubMessage>
       </Styled.HeroTop>
       <Styled.HeroBottom>
-        <h1>bienvenidos</h1>
+        <Styled.BalanceTitle>Tu balance</Styled.BalanceTitle>
       </Styled.HeroBottom>
     </Styled.BalanceCardContainer>
   );

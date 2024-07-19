@@ -36,7 +36,7 @@ function Form() {
     <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>
       <Styled.Inputs>
         <Styled.CustomContainer>
-          <CustomInput
+          <CustomInput<FormFields>
             label="Nombre y apellido"
             name="name"
             register={register}
@@ -49,7 +49,7 @@ function Form() {
           />
         </Styled.CustomContainer>
         <Styled.CustomContainer>
-          <CustomInput
+          <CustomInput<FormFields>
             label="Saldo inicial"
             name="initialBalance"
             register={register}
@@ -67,7 +67,7 @@ function Form() {
             errors={errors}
           />
 
-          <CustomInput
+          <CustomInput<FormFields>
             label="Número de cuenta"
             name="accountNumber"
             register={register}

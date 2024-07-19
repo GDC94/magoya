@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 export const transactionSchema = z.object({
-  initialBalance: z.string(),
-  accountNumber: z.string().min(4).max(4),
+  amount: z.string(),
+  transactionType: z.enum(["deposit", "withdrawal"]),
 });
 
 export type TransactionFormFields = z.infer<typeof transactionSchema>;

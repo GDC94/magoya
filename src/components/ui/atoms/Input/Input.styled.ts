@@ -5,6 +5,7 @@ export const InputWrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
+  cursor: pointer;
 `;
 
 export const Input = styled.input`
@@ -29,4 +30,11 @@ export const Label = styled.label`
 export const ErrorMessage = styled.span`
   color: red;
   font-size: 12px;
+`;
+
+export const Select = styled.select`
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 `;

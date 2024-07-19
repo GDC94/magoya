@@ -3,7 +3,7 @@ import React from "react";
 
 import { Layout } from "@/components/ui/commons/LayoutClient";
 import Header from "@/components/ui/molecules/Header/Header";
-import CentralBoard from "@/components/ui/CentralBoard/CentralBoard";
+import CentralBoard from "@/components/ui/organisms/CentralBoard/CentralBoard";
 
 import * as Styled from "./Dashboard.styles";
 

@@ -43,3 +43,10 @@ export const WelcomeSubMessage = styled.p`
   font-weight: bold;
   letter-spacing: -1px;
 `;
+
+export const BalanceTitle = styled.h2`
+  font-size: ${(props) => props.theme.size["2"]};
+  color: ${({ theme }) => theme.colors.dark[100]};
+  font-weight: 600;
+  letter-spacing: -2px;
+`;

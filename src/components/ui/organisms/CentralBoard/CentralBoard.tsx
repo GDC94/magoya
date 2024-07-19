@@ -1,9 +1,8 @@
 import * as React from "react";
 
-import Form from "@/components/ui/Form/Form";
-
-import TableTech from "../molecules/TableTech/TableTech";
-import { MagneticButton } from "../molecules/MagneticButton";
+import Form from "@/components/ui/organisms/Form/Form";
+import TableTech from "@/components/ui/molecules/TableTech/TableTech";
+import { MagneticButton } from "@/components/ui/molecules/MagneticButton";
 
 import * as Styled from "./CentralBoard.styled";
 
@@ -29,10 +28,9 @@ function CentralBoard() {
             <Styled.ButtonLink>Github Frontend</Styled.ButtonLink>
             <Styled.ButtonLink>Github Backend</Styled.ButtonLink>
           </Styled.ButtonsRepositories>
-<Styled.MagicButtonContent>
-<MagneticButton />
-</Styled.MagicButtonContent>
-   
+          <Styled.MagicButtonContent>
+            <MagneticButton />
+          </Styled.MagicButtonContent>
         </Styled.MiddleLeft>
       </Styled.Right>
     </Styled.CentralBoardContainer>
