@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 import { FlexBasicConfig, FlexSpaceBetween } from "@/styles/themeParts/flex";
-import { QUERIES } from "@/styles";
+import { QUERIES, SIZES } from "@/styles";
 
 export const CentralBoardContainer = styled.div`
   width: 80%;
@@ -116,7 +116,7 @@ export const HeaderForm = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: ${({ theme }) => theme.size["3.125"]};
+  font-size: clamp(${SIZES["2"]}, 2vw + ${SIZES["2"]}, ${SIZES["7"]});
   font-weight: bolder;
   color: ${({ theme }) => theme.colors.white[100]};
   text-align: flex-start;

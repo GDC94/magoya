@@ -5,14 +5,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import CustomInput from "@/components/ui/atoms/Input/Input";
 
 import * as Styled from "./Form.styled";
-import { accountNumbeRegex, initialBalanceRegex, schema, type FormFields } from "./Form.types";
+import { schema, type FormFields } from "./Form.types";
 
 function Form() {
   const {
     register,
     handleSubmit,
     setError,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
+    reset,
   } = useForm<FormFields>({
     defaultValues: {
       name: "",
@@ -22,9 +23,21 @@ function Form() {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
+  const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
     try {
-      console.log(data);
+      const dataCaptured = schema.safeParse(data);
+
+      if (!dataCaptured.success) {
+        dataCaptured.error.errors.forEach((error) => {
+          setError(error.path[0] as keyof FormFields, {
+            type: "manual",
+            message: error.message,
+          });
+        });
+
+        return;
+      }
+      reset();
     } catch (error) {
       setError("root", {
         message: "There was an error while submitting the form",
@@ -40,12 +53,16 @@ function Form() {
             label="Nombre y apellido"
             name="name"
             register={register}
+            inputMode="text"
             placeholder="Ej: Lionel Messi"
             validation={{
               required: "This is a required field",
-              validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
             }}
             errors={errors}
+            inputProps={{
+              pattern: "[A-Za-z ]*",
+              title: "Only letters and spaces are allowed",
+            }}
           />
         </Styled.CustomContainer>
         <Styled.CustomContainer>
@@ -53,16 +70,15 @@ function Form() {
             label="Saldo inicial"
             name="initialBalance"
             register={register}
+            inputMode="numeric"
+            type="number"
             placeholder="Ej: 10"
+            inputProps={{
+              pattern: "^0$|^[1-9][0-9]*$",
+              title: "Cannot start with zero",
+            }}
             validation={{
               required: "This is a required field",
-              validate: (value) => {
-                if (!initialBalanceRegex.test(Number(value).toString())) {
-                  return "Incorrect format";
-                }
-
-                return true;
-              },
             }}
             errors={errors}
           />
@@ -72,22 +88,21 @@ function Form() {
             name="accountNumber"
             register={register}
             placeholder="Ej: 1987"
+            type="number"
+            inputProps={{
+              maxLength: 4,
+              pattern: "[0-9]*",
+              title: "Up to 4 characters",
+            }}
             validation={{
               required: "This is a required field",
-              validate: (value) => {
-                if (!accountNumbeRegex.test(Number(value).toString())) {
-                  return "Incorrect format";
-                }
-
-                return true;
-              },
             }}
             errors={errors}
           />
         </Styled.CustomContainer>
       </Styled.Inputs>
 
-      <Styled.SubmitButton disabled={isSubmitting} type="submit">
+      <Styled.SubmitButton disabled={isSubmitting || !isValid} type="submit">
         Crear cuenta
       </Styled.SubmitButton>
       {errors.root ? <Styled.ErrorMessage>{errors.root.message}</Styled.ErrorMessage> : null}

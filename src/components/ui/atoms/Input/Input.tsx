@@ -20,27 +20,52 @@ function CustomInput<T extends FieldValues>({
   placeholder,
   errors,
   validation,
-  options, // new prop for select options
-  defaultValue, // add defaultValue prop
-  value, // add value prop for controlled components
-}: CustomInputProps<T>) {
-  const errorMessage = errors[name]?.message as unknown as string;
+  inputProps = {},
+  options,
+  defaultValue,
+  value,
+}: CustomInputProps<T> & {
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+}) {
+  const errorMessage = errors[name]
+    ?.message as unknown as string;
 
   return (
     <Styled.InputWrapper>
-      <Styled.Label htmlFor={name as string}>{label.charAt(0).toUpperCase() + label.slice(1)}</Styled.Label>
+      <Styled.Label htmlFor={name as string}>
+        {label.charAt(0).toUpperCase() +
+          label.slice(1)}
+      </Styled.Label>
       {type === "select" && options ? (
-        <Styled.Select id={name as string} defaultValue={defaultValue} value={value} {...register(name, validation)}>
+        <Styled.Select
+          id={name as string}
+          defaultValue={defaultValue}
+          value={value}
+          {...register(name, validation)}
+        >
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option
+              key={option.value}
+              value={option.value}
+            >
               {option.label}
             </option>
           ))}
         </Styled.Select>
       ) : (
-        <Styled.Input id={name as string} type={type} placeholder={placeholder} {...register(name, validation)} />
+        <Styled.Input
+          {...inputProps}
+          id={name as string}
+          type={type}
+          placeholder={placeholder}
+          {...register(name, validation)}
+        />
       )}
-      {errorMessage ? <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage> : null}
+      {errorMessage ? (
+        <Styled.ErrorMessage>
+          {errorMessage}
+        </Styled.ErrorMessage>
+      ) : null}
     </Styled.InputWrapper>
   );
 }

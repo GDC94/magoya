@@ -23,7 +23,8 @@ export const Inputs = styled.label`
 
 export const ErrorMessage = styled.span`
   color: red;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.size["0.75"]};
+  font-weight: 500;
 `;
 
 export const SubmitButton = styled.button`
@@ -34,12 +35,23 @@ export const SubmitButton = styled.button`
   cursor: "pointer";
   outline: none;
   display: inline-block;
-  padding: ${(props) => props.theme.size["1"]} ${(props) => props.theme.size["2"]};
+  padding: ${(props) => props.theme.size["0.75"]} ${(props) => props.theme.size["2"]};
   transition: background-color 0.3s;
   transition: 0.5s;
   color: white;
   font-weight: 600;
 
+
+  &:disabled {
+    background-color: #BEBEBE;
+    border-color: rgb(160,160,160);
+    color:#888888;
+    &:hover {
+    background-color:  #BEBEBE;
+    border-color: rgb(160,160,160);
+    color: #888888;
+  }
+  }
   &:hover {
     background-color: ${({ theme }) => theme.colors.white[100]};
     border-color: ${({ theme }) => theme.colors.dark[100]};
