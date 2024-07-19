@@ -40,7 +40,7 @@ function Form() {
           label="Nombre"
           name="name"
           register={register}
-          placeholder="Nombre"
+          placeholder="Ej: Lionel"
           validation={{
             required: "This is a required field",
             validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
@@ -52,7 +52,7 @@ function Form() {
           label="Apellido"
           name="lastName"
           register={register}
-          placeholder="Apellido"
+          placeholder="Ej: Messi"
           validation={{
             required: "This is a required field",
             validate: (value) => value.length > 3 || "This field must be longer than 3 characters",
@@ -65,7 +65,7 @@ function Form() {
           label="Saldo inicial"
           name="initialBalance"
           register={register}
-          placeholder="Ej: 20000"
+          placeholder="Ej: 10"
           validation={{
             required: "This is a required field",
             validate: (value) => {
@@ -83,7 +83,7 @@ function Form() {
           label="Número de cuenta"
           name="accountNumber"
           register={register}
-          placeholder="Ej: 1994"
+          placeholder="Ej: 1987"
           validation={{
             required: "This is a required field",
             validate: (value) => {

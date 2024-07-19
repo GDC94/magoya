@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-import { FlexSpaceBetween } from "@/styles/themeParts/flex";
+import { FlexBasicConfig, FlexSpaceBetween } from "@/styles/themeParts/flex";
 
 export const CentralBoardContainer = styled.div`
   width: 80%;
@@ -50,9 +50,7 @@ export const MiddleRight = styled.div`
 export const Right = styled.div`
   width: 60%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${FlexBasicConfig}
   background-color: white;
   border: 3px solid ${({ theme }) => theme.colors.dark[100]};
 `;
