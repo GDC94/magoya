@@ -48,3 +48,18 @@ export const TOOLS_RIGHT: Tool[] = [
     id: 10,
   },
 ];
+
+export const TOOLS_BACK: Tool[] = [
+  {
+    name: "Express",
+    id: 11,
+  },
+  {
+    name: "Node js",
+    id: 12,
+  },
+  {
+    name: "Postgres",
+    id: 13,
+  },
+];

@@ -14,7 +14,7 @@ export const GithubIcon: React.FC<IconSvgProps> = ({ size = 24, width, height, .
       viewBox="0 0 24 24"
       width={size || width}
       xmlns="http://www.w3.org/2000/svg"
-      fill="none"
+      fill="#fff"
       stroke="#fff"
       strokeWidth="3"
       strokeLinecap="round"

@@ -11,24 +11,32 @@ function CentralBoard() {
   return (
     <Styled.CentralBoardContainer>
       <Styled.Left>
+        <Styled.HeaderForm>
+          <Styled.Title>
+            Creá tu cuenta en <Styled.Brand>MagoyApp</Styled.Brand> y comenzá a operar
+          </Styled.Title>
+        </Styled.HeaderForm>
         <Form />
       </Styled.Left>
 
       <Styled.Right>
-        <Styled.MiddleLeft />
         <Styled.MiddleRight>
           <TableTech />
-          <MagneticButton />
         </Styled.MiddleRight>
+        <Styled.MiddleLeft>
+          <Styled.ButtonsRepositories>
+            <Styled.ButtonLink>Linkedin</Styled.ButtonLink>
+            <Styled.ButtonLink>Github Frontend</Styled.ButtonLink>
+            <Styled.ButtonLink>Github Backend</Styled.ButtonLink>
+          </Styled.ButtonsRepositories>
+<Styled.MagicButtonContent>
+<MagneticButton />
+</Styled.MagicButtonContent>
+   
+        </Styled.MiddleLeft>
       </Styled.Right>
     </Styled.CentralBoardContainer>
   );
 }
 
 export default CentralBoard;
-
-{
-  /*
-         <Image src="/machine.avif" alt="Logo" width={800} height={400} priority />
-        */
-}

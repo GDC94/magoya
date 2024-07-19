@@ -3,7 +3,7 @@ import * as React from "react";
 import Logo from "../../atoms/Logo/Logo";
 
 import * as Styled from "./TableTech.styled";
-import { type Tool, TOOLS_LEFT, TOOLS_RIGHT } from "./TableTech.types";
+import { type Tool, TOOLS_BACK, TOOLS_LEFT, TOOLS_RIGHT } from "./TableTech.types";
 
 function TableTech() {
   return (
@@ -19,7 +19,7 @@ function TableTech() {
         depósitos y retiros que quieras.
       </Styled.Paragraph>
       <Styled.Divider />
-      <Styled.Paragraph>Para su construcción, se utilizaron las siguientes tecnologías:</Styled.Paragraph>
+      <Styled.Paragraph>Para la construcción del frontend, se utilizaron las siguientes tecnologías:</Styled.Paragraph>
 
       <Styled.TechTable>
         <Styled.ItemsLeft>
@@ -34,6 +34,12 @@ function TableTech() {
         </Styled.ItemsRight>
       </Styled.TechTable>
       <Styled.Divider />
+      <Styled.Paragraph>Para el armado del backend:</Styled.Paragraph>
+      <Styled.ItemsBack>
+        {TOOLS_BACK.map((tool: Tool) => (
+          <Styled.Item key={tool.id}>● {tool.name}</Styled.Item>
+        ))}
+      </Styled.ItemsBack>
     </>
   );
 }

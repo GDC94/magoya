@@ -2,7 +2,6 @@ import { z } from "zod";
 
 export const schema = z.object({
   name: z.string().min(2),
-  lastName: z.string().min(3),
   initialBalance: z.string(),
   accountNumber: z.string().min(4).max(4),
 });

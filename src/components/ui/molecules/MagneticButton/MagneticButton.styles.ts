@@ -7,10 +7,6 @@ export const GridContainer = styled.div`
   display: grid;
   padding: 3rem;
   place-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -2%);
   border-radius: 100%;
   border: 0.3px solid rgba(255, 255, 255, 0.2);
 `;

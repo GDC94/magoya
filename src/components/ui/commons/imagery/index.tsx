@@ -1,1 +1,1 @@
-export { GithubIcon, CommitIcon, Bubles, CornerRightSvg, CornerTopLeftSvg, ArrowTop, LogoIcon } from "./imagery";
+export { GithubIcon, CommitIcon, CornerRightSvg, CornerTopLeftSvg, ArrowTop, LogoIcon } from "./imagery";

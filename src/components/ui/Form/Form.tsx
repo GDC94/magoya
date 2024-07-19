@@ -16,7 +16,6 @@ function Form() {
   } = useForm<FormFields>({
     defaultValues: {
       name: "",
-      lastName: "",
       initialBalance: "",
       accountNumber: "",
     },
@@ -35,71 +34,61 @@ function Form() {
 
   return (
     <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>
-      <Styled.CustomContainer>
-        <CustomInput
-          label="Nombre"
-          name="name"
-          register={register}
-          placeholder="Ej: Lionel"
-          validation={{
-            required: "This is a required field",
-            validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
-          }}
-          errors={errors}
-        />
+      <Styled.Inputs>
+        <Styled.CustomContainer>
+          <CustomInput
+            label="Nombre y apellido"
+            name="name"
+            register={register}
+            placeholder="Ej: Lionel Messi"
+            validation={{
+              required: "This is a required field",
+              validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
+            }}
+            errors={errors}
+          />
+        </Styled.CustomContainer>
+        <Styled.CustomContainer>
+          <CustomInput
+            label="Saldo inicial"
+            name="initialBalance"
+            register={register}
+            placeholder="Ej: 10"
+            validation={{
+              required: "This is a required field",
+              validate: (value) => {
+                if (!initialBalanceRegex.test(Number(value).toString())) {
+                  return "Incorrect format";
+                }
 
-        <CustomInput
-          label="Apellido"
-          name="lastName"
-          register={register}
-          placeholder="Ej: Messi"
-          validation={{
-            required: "This is a required field",
-            validate: (value) => value.length > 3 || "This field must be longer than 3 characters",
-          }}
-          errors={errors}
-        />
-      </Styled.CustomContainer>
-      <Styled.CustomContainer>
-        <CustomInput
-          label="Saldo inicial"
-          name="initialBalance"
-          register={register}
-          placeholder="Ej: 10"
-          validation={{
-            required: "This is a required field",
-            validate: (value) => {
-              if (!initialBalanceRegex.test(Number(value).toString())) {
-                return "Incorrect format";
-              }
+                return true;
+              },
+            }}
+            errors={errors}
+          />
 
-              return true;
-            },
-          }}
-          errors={errors}
-        />
+          <CustomInput
+            label="Número de cuenta"
+            name="accountNumber"
+            register={register}
+            placeholder="Ej: 1987"
+            validation={{
+              required: "This is a required field",
+              validate: (value) => {
+                if (!accountNumbeRegex.test(Number(value).toString())) {
+                  return "Incorrect format";
+                }
 
-        <CustomInput
-          label="Número de cuenta"
-          name="accountNumber"
-          register={register}
-          placeholder="Ej: 1987"
-          validation={{
-            required: "This is a required field",
-            validate: (value) => {
-              if (!accountNumbeRegex.test(Number(value).toString())) {
-                return "Incorrect format";
-              }
-
-              return true;
-            },
-          }}
-          errors={errors}
-        />
-      </Styled.CustomContainer>
+                return true;
+              },
+            }}
+            errors={errors}
+          />
+        </Styled.CustomContainer>
+      </Styled.Inputs>
 
       <Styled.SubmitButton disabled={isSubmitting} type="submit">
-        Enviar
+        Crear cuenta
       </Styled.SubmitButton>
       {errors.root ? <Styled.ErrorMessage>{errors.root.message}</Styled.ErrorMessage> : null}
     </Styled.FormWrapper>

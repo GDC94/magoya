@@ -1,5 +1,12 @@
 import "@emotion/react";
-import { COLORS, QUERIES, SIZES, type TypeThemeColors, type TypeThemeQueries, type TypeThemeSizes } from "./themeParts";
+import {
+  COLORS,
+  QUERIES,
+  SIZES,
+  type TypeThemeColors,
+  type TypeThemeQueries,
+  type TypeThemeSizes,
+} from "./themeParts";
 
 export const theme = {
   colors: COLORS,

@@ -1,6 +1,12 @@
-import { type Path, type UseFormRegister, type FieldValues, type FieldErrors } from "react-hook-form";
+import {
+  type Path,
+  type UseFormRegister,
+  type FieldValues,
+  type FieldErrors,
+} from "react-hook-form";
 
-export interface CustomInputProps<T extends FieldValues> extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CustomInputProps<T extends FieldValues>
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   name: Path<T>;
   register: UseFormRegister<T>;
   placeholder?: string;
@@ -9,6 +15,8 @@ export interface CustomInputProps<T extends FieldValues> extends React.InputHTML
   errors: FieldErrors<T>;
   validation?: {
     required?: string | boolean;
-    validate?: (value: T[Path<T>]) => boolean | string | Promise<boolean | string> | undefined;
+    validate?: (
+      value: T[Path<T>],
+    ) => boolean | string | Promise<boolean | string> | undefined;
   };
 }

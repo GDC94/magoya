@@ -5,12 +5,20 @@ import { FlexSpaceBetween } from "@/styles/themeParts/flex";
 export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 1rem;
+  justify-content: space-between;
+  height: 100%;
+  padding: ${({ theme }) => theme.size["1"]};
+  margin-top: ${({ theme }) => theme.size["0.5"]};
 `;
 
 export const Label = styled.label`
   font-weight: bold;
+`;
+
+export const Inputs = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.size["1"]};
 `;
 
 export const ErrorMessage = styled.span`
@@ -28,9 +36,9 @@ export const SubmitButton = styled.button`
   display: inline-block;
   padding: ${(props) => props.theme.size["1"]} ${(props) => props.theme.size["2"]};
   transition: background-color 0.3s;
-  transition: 0.4s;
+  transition: 0.5s;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.white[100]};
