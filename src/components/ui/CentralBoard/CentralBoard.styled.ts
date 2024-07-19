@@ -20,43 +20,39 @@ export const CentralBoardContainer = styled.div`
 `;
 
 export const Left = styled.div`
-  width: 50%;
+  width: 40%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.secondary[100]};
-  border: 1px solid ${({ theme }) => theme.colors.dark[100]};
-  border-radius: 10px;
-  padding: 1rem;
+  border: 3px solid ${({ theme }) => theme.colors.dark[100]};
+  border-bottom: 7px solid ${({ theme }) => theme.colors.dark[100]};
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+export const MiddleLeft = styled.div`
+  width: 45%;
+  height: 100%;
+  border-right: 1px solid ${({ theme }) => theme.colors.dark[100]};
+  background-color: hsl(342.22deg 93.1% 88.63% / 90%);
+  border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
+`;
+
+export const MiddleRight = styled.div`
+  height: 100%;
+  width: 55%;
+  padding: ${({ theme }) => theme.size["1"]};
+  position: relative;
+  background-color: #f3e281ba;
+  border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
 `;
 
 export const Right = styled.div`
-  width: 50%;
+  width: 60%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const BrandContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: rgb(212 198 253);
-  border: 1px solid ${({ theme }) => theme.colors.dark[100]};
-  padding: 0.5rem;
-  border-radius: 10px;
-`;
-
-export const BrandText = styled.div`
-  font-family: "Anton", sans-serif;
-  font-size: 4.6rem;
-  line-height: 92%;
-  letter-spacing: -2px;
-`;
-
-export const Title = styled.p`
-  font-family: "Anton", sans-serif;
-  font-size: 3rem;
-  line-height: 92%;
-  letter-spacing: -1px;
+  background-color: white;
+  border: 3px solid ${({ theme }) => theme.colors.dark[100]};
 `;

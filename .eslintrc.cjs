@@ -84,6 +84,7 @@ module.exports = {
       },
     ],
     "tsdoc/syntax": "warn",
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "jsdoc/require-returns-type": "off",
     "react/jsx-sort-props": "off",

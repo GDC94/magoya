@@ -16,6 +16,7 @@ import { type CustomInputProps } from "./input.types";
 function CustomInput<T extends FieldValues>({
   type = "text",
   name,
+  label,
   register,
   placeholder,
   errors,
@@ -25,7 +26,7 @@ function CustomInput<T extends FieldValues>({
 
   return (
     <Styled.InputWrapper>
-      <Styled.Label htmlFor={name as string}>{name.charAt(0).toUpperCase() + name.slice(1)}:</Styled.Label>
+      <Styled.Label htmlFor={name as string}>{label.charAt(0).toUpperCase() + label.slice(1)}:</Styled.Label>
       <Styled.Input id={name as string} type={type} placeholder={placeholder} {...register(name, validation)} />
       {errorMessage ? <Styled.ErrorMessage>{errorMessage}</Styled.ErrorMessage> : null}
     </Styled.InputWrapper>

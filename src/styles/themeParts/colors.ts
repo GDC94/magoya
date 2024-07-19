@@ -5,6 +5,9 @@ export const COLORS = {
   dark: {
     100: "hsl(0, 0%, 0%)",
   },
+  white: {
+    100: "hsl(0, 0%, 100%)",
+  },
   primary: {
     100: "hsl(50.7, 100%, 50.6%)",
   },

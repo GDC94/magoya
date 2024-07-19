@@ -5,9 +5,10 @@ export interface CustomInputProps<T extends FieldValues> extends React.InputHTML
   register: UseFormRegister<T>;
   placeholder?: string;
   type?: "text" | "number";
+  label: string;
   errors: FieldErrors<T>;
   validation?: {
     required?: string | boolean;
-    validate?: (value: T[Path<T>]) => boolean | string | Promise<boolean | string>;
+    validate?: (value: T[Path<T>]) => boolean | string | Promise<boolean | string> | undefined;
   };
 }

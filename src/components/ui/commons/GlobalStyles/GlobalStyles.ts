@@ -20,6 +20,7 @@ html:focus-within {
 }
 /* Set core body defaults */
 body {
+font-family: "Kanit", sans-serif;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;

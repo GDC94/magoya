@@ -4,8 +4,14 @@ export const FlexBasicConfig = {
   justifyContent: "center",
 } as const;
 
+export const FlexStartConfig = {
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+} as const;
+
 export const FlexSpaceBetween = {
   display: "flex",
   alignItems: "center",
-  justifyContent: "between",
+  justifyContent: "space-between",
 } as const;

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
 
 export const LogoContainer = styled.div`
-  padding: 0.5rem;
+  padding-right: 0.5rem;
 `;
