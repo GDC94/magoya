@@ -1,5 +1,6 @@
-import { QUERIES } from "@/styles";
 import styled from "@emotion/styled";
+
+import { QUERIES } from "@/styles";
 
 export const LayoutContainer = styled.div`
   width: 100%;

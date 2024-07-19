@@ -43,7 +43,7 @@ export const MiddleLeft = styled.div`
   border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
   ${FlexSpaceBetween}
   @media ${QUERIES.tabletAndSmaller} {
-   flex-direction: column;
+    flex-direction: column;
   }
 `;
 
