@@ -19,18 +19,18 @@ export const DashboardContainer = styled.div`
 
 export const ContainerTop = styled.div`
   height: 65%;
-  border: 1px solid
-    ${({ theme }) => theme.colors.dark[100]};
+  border: 1px solid ${({ theme }) => theme.colors.dark[100]};
+  background-image: url("/background.svg");
+  background-size: contain;
+  background-position: right;
 `;
 
 export const ContainerBottom = styled.div`
   min-height: 35%;
   height: 35%;
-  border: 1px solid
-    ${({ theme }) => theme.colors.dark[100]};
+  border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   border-top: 0px;
-  background-color: ${({ theme }) =>
-    theme.colors.white[100]};
+  background-color: #ffd347;
   @media ${QUERIES.tabletAndSmaller} {
     height: 100%;
   }

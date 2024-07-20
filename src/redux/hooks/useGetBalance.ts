@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, type UseQueryOptions } from "@tanstack/react-query";
 
 import { AxiosInstance } from "@/lib/api";
 
@@ -10,9 +10,14 @@ const fetchBalance = async (accountId: string): Promise<GetBalanceResponse> => {
   return response.data;
 };
 
-export const useGetBalance = (accountId: string) => {
+export const useGetBalance = (
+  accountId: string,
+  options?: UseQueryOptions<GetBalanceResponse, Error, GetBalanceResponse>,
+) => {
   return useQuery({
     queryKey: ["balance", accountId],
     queryFn: () => fetchBalance(accountId),
+    refetchOnWindowFocus: true,
+    ...options,
   });
 };

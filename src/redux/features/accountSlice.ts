@@ -16,7 +16,7 @@ interface AccountState {
     id: number | null;
     name: string;
     accountNumber: string;
-  } | null; 
+  } | null;
 }
 
 const initialState: AccountState = {

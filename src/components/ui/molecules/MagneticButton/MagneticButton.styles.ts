@@ -25,12 +25,12 @@ export const StyledMotionButton = styled(motion.button)`
   border: 2px solid black;
   border-radius: 50%;
   transition: background-color 200ms ease-out;
-  background-color: #a3f797;
+  background-color: #d4c6fd;
 
   cursor: pointer;
 
   &:hover {
-    background-color: #00de67;
+    background-color: rgb(191 164 255);
     border: 4px dotted ${({ theme }) => theme.colors.dark[100]};
   }
 `;

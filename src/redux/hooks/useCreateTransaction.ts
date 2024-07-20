@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 
 import { AxiosInstance } from "@/lib/api";
+import queryClient from "@/lib/QueryClient";
 
 import {
   createTransactionSuccess,
@@ -22,9 +23,9 @@ export const useCreateTransaction = () => {
           "/transactions",
           transaction,
         );
-        console.log(response)
 
         dispatch(createTransactionSuccess(response.data));
+        queryClient.invalidateQueries(["balance", transaction.accountNumber] as never);
 
         return response.data;
       } catch (error) {

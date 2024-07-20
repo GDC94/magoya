@@ -17,13 +17,14 @@ export const NameContainer = styled.div`
 `;
 
 export const AccountContainer = styled.div`
-  margin-bottom: ${(props) => props.theme.size["1"]};
+  margin-bottom: ${(props) => props.theme.size["0.25"]};
 `;
 
 export const BalanceContainer = styled.div`
   border: 2px solid ${({ theme }) => theme.colors.dark[100]};
-  background-color: #00de67;
+  background-color: #a3f797;
   padding: ${(props) => props.theme.size["0.5"]};
+  margin-bottom: ${(props) => props.theme.size["1.25"]};
 `;
 
 export const BalanceDetail = styled.div`
@@ -50,6 +51,6 @@ export const Amount = styled(Title)`
 
 export const Subtitle = styled.p`
   font-size: ${(props) => props.theme.size["1"]};
-  color: darkgrey;
+  color: ${({ theme }) => theme.colors.dark[100]};
   font-weight: 500;
 `;

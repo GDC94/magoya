@@ -13,6 +13,10 @@ export const TransactionCardContainer = styled.div`
   width: 100%;
   ${FlexBasicConfigColumn}
 
+  background-image: url("/textura.svg");
+  background-size: contain;
+  background-position: center;
+
   @media ${QUERIES.tabletAndSmaller} {
     border: 2px solid ${({ theme }) => theme.colors.dark[100]};
     border-top: 0px;
@@ -44,7 +48,7 @@ export const InputsWrapper = styled.div`
 
 export const TransactionHeader = styled.h5`
   font-size: ${(props) => props.theme.size["1"]};
-  color: darkgrey;
+  color: ${({ theme }) => theme.colors.dark[100]};
   font-weight: 500;
   margin-bottom: ${(props) => props.theme.size["1"]};
 `;
@@ -73,6 +77,7 @@ export const FooterCard = styled.div`
   height: 15%;
   width: 100%;
 `;
+
 export const Wrapper = styled.span`
   width: 100%;
   display: flex;

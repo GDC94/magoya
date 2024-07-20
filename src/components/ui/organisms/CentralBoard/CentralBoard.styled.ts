@@ -60,7 +60,7 @@ export const ButtonsRepositories = styled.div`
   flex-direction: column;
   padding: ${({ theme }) => theme.size["1"]};
   gap: ${({ theme }) => theme.size["0.25"]};
-  background-image: url("/back.jpeg");
+  background-image: url("/textura.svg");
   background-size: cover;
   background-position: center;
 
@@ -85,7 +85,6 @@ export const ButtonLink = styled.a`
   width: auto;
   ${FlexBasicConfig}
   gap: 10px;
-  background-color: #ffc305;
   text-decoration: none;
   color: #092826;
   font-weight: 600;
@@ -117,7 +116,7 @@ export const Right = styled.div`
 export const HeaderForm = styled.div`
   padding: ${({ theme }) => theme.size["1"]};
   border-bottom: 3px solid ${({ theme }) => theme.colors.dark[100]};
-  background-color: #092826;
+  background-color: #000;
 `;
 
 export const Title = styled.p`

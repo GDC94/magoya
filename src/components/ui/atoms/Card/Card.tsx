@@ -20,6 +20,13 @@ function Card() {
   */
   return (
     <Styled.CardContainer>
+      <Styled.BalanceContainer>
+        <Styled.Title>Tu balance:</Styled.Title>
+        <Styled.BalanceDetail>
+          <Styled.Dollar>$</Styled.Dollar>
+          <Styled.Amount>{data?.balance}</Styled.Amount>
+        </Styled.BalanceDetail>
+      </Styled.BalanceContainer>
       <Styled.Top>
         <Styled.NameContainer>
           <Styled.Title>Nombre:</Styled.Title>
@@ -30,13 +37,6 @@ function Card() {
           <Styled.Subtitle>{lastCreatedAccount?.accountNumber}</Styled.Subtitle>
         </Styled.AccountContainer>
       </Styled.Top>
-      <Styled.BalanceContainer>
-        <Styled.Title>Tu balance:</Styled.Title>
-        <Styled.BalanceDetail>
-          <Styled.Dollar>$</Styled.Dollar>
-          <Styled.Amount>{data?.balance}</Styled.Amount>
-        </Styled.BalanceDetail>
-      </Styled.BalanceContainer>
     </Styled.CardContainer>
   );
 }

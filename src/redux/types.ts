@@ -12,10 +12,8 @@ export interface GetBalanceResponse {
 }
 
 export interface CreateTransactionResponse {
-  id: string;
-  accountId: string;
-  type: "deposito" | "transferencia";
-  amount: number;
+  message: string;
+  newBalance: number;
 }
 
 export const accountSchema = z.object({

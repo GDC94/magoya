@@ -5,6 +5,10 @@
 ---------------------------------------------------------------------------------
 Frontend challenge 
 
+<img width="1237" alt="vista" src="./public/front.png">
+
+<img width="1237" alt="vista" src="./public/front-2.png">
+
 ## 🕺 Cómo levantar el proyecto
 
 ```bash

@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 import { FlexStartConfig } from "@/styles/themeParts/flex";
-import { QUERIES } from "@/styles";
 
 export const MiddleLeft = styled.div`
   width: 100%;
@@ -63,19 +62,8 @@ export const ItemsRight = styled.div`
   padding-left: ${({ theme }) => theme.size["0.5"]};
 `;
 
-export const ItemsBack = styled.div`
-  height: auto;
-  width: 50%;
-  gap: 10px;
-  ${FlexStartConfig}
-
-  @media ${QUERIES.tabletAndSmaller} {
-    gap: 2px;
-    padding-left: 0px;
-  }
-`;
-
 export const Item = styled.span`
   font-size: ${({ theme }) => theme.size["0.875"]};
   font-weight: 600;
+  padding-bottom: 3px;
 `;

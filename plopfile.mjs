@@ -1,5 +1,4 @@
 /* eslint-disable import/no-anonymous-default-export */
-// plop se define como un micro-generator framework
 const ComponentType = {
   ATOMS: "atoms",
   MOLECULES: "molecules",

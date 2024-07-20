@@ -49,7 +49,7 @@ export const SubmitButton = styled.button`
   font-weight: 600;
 
   &:disabled {
-    background-color: #bebebe;
+    background-color: #EBEAEA;
     border-color: rgb(160, 160, 160);
     color: #888888;
     &:hover {

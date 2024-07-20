@@ -19,7 +19,6 @@ export const AccountContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: ${({ theme }) => theme.colors.quaternary[100]};
   width: 1000px;
   max-width: 95%;
   margin: 0 auto;

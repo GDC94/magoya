@@ -1,36 +1,44 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-interface BalanceState {
-  balances: Record<string, number>;
-  loading: boolean;
-  error: string | null;
+interface Account {
+  id: string;
+  name: string;
+  accountNumber: string;
+  initialBalance: number;
 }
 
-const initialState: BalanceState = {
-  balances: {},
-  loading: false,
-  error: null,
+interface AccountState {
+  lastCreatedAccount: Account | null;
+  accounts: Record<string, Account>;
+}
+
+const initialState: AccountState = {
+  lastCreatedAccount: null,
+  accounts: {},
 };
 
-const balanceSlice = createSlice({
-  name: "balance",
+const accountSlice = createSlice({
+  name: "account",
   initialState,
   reducers: {
-    fetchBalanceStart(state) {
-      state.loading = true;
-      state.error = null;
+    createAccount(state, action: PayloadAction<Account>) {
+      state.lastCreatedAccount = action.payload;
+      state.accounts[action.payload.id] = action.payload;
     },
-    fetchBalanceSuccess(state, action: PayloadAction<{ accountId: string; balance: number }>) {
-      state.balances[action.payload.accountId] = action.payload.balance;
-      state.loading = false;
-    },
-    fetchBalanceFailure(state, action: PayloadAction<string>) {
-      state.loading = false;
-      state.error = action.payload;
+    updateBalance(state, action: PayloadAction<{ accountId: string; newBalance: number }>) {
+      const account = state.accounts[action.payload.accountId];
+
+      if (account) {
+        account.initialBalance = action.payload.newBalance;
+        if (state.lastCreatedAccount?.id === action.payload.accountId) {
+          state.lastCreatedAccount.initialBalance = action.payload.newBalance;
+        }
+      }
     },
   },
 });
 
-export const { fetchBalanceStart, fetchBalanceSuccess, fetchBalanceFailure } = balanceSlice.actions;
+export const { createAccount, updateBalance } = accountSlice.actions;
 
-export default balanceSlice.reducer;
+export default accountSlice.reducer;

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import * as React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -18,6 +19,7 @@ function TransactionCard() {
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
+    reset,
   } = useForm<TransactionFormFields>({
     defaultValues: {
       amount: "",
@@ -42,7 +44,8 @@ function TransactionCard() {
 
       createTransaction(transaction, {
         onSuccess: (response) => {
-          console.log("Transaction created:", response);
+          reset();
+          console.log("reseeponse", response)
         },
         onError: (error) => {
           console.error("Error creating transaction:", error);
@@ -72,6 +75,7 @@ function TransactionCard() {
             label="Colocá el monto de la operación"
             type="number"
             name="amount"
+            placeholder="Ej 1000"
             register={register}
             validation={{
               required: "This is a required field",
@@ -89,7 +93,6 @@ function TransactionCard() {
             label="Depósito o transferencia"
             name="transactionType"
             register={register}
-            placeholder=""
             validation={{
               required: "This is a required field",
               validate: (value) => value.length > 2 || "This field must be longer than 2 characters",
