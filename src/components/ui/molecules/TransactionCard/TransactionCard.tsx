@@ -32,8 +32,6 @@ function TransactionCard() {
   const lastCreatedAccount = useSelector((state: RootState) => state.account.lastCreatedAccount);
   const accountNumber = lastCreatedAccount?.accountNumber || "";
 
-  console.log("accountNumber", accountNumber);
-
   const onSubmit: SubmitHandler<TransactionFormFields> = (data) => {
     try {
       const transaction = {
