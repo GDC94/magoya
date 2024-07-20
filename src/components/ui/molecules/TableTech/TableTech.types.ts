@@ -32,16 +32,8 @@ export const TOOLS_RIGHT: Tool[] = [
     id: 6,
   },
   {
-    name: "Jest",
-    id: 7,
-  },
-  {
     name: "Zod",
     id: 8,
-  },
-  {
-    name: "React Testing Library",
-    id: 9,
   },
   {
     name: "Emotion",

@@ -21,6 +21,13 @@ export const Inputs = styled.label`
   gap: ${({ theme }) => theme.size["1"]};
 `;
 
+export const Wrapper = styled.span`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const ErrorMessage = styled.span`
   color: red;
   font-size: ${({ theme }) => theme.size["0.75"]};
@@ -41,16 +48,15 @@ export const SubmitButton = styled.button`
   color: white;
   font-weight: 600;
 
-
   &:disabled {
-    background-color: #BEBEBE;
-    border-color: rgb(160,160,160);
-    color:#888888;
-    &:hover {
-    background-color:  #BEBEBE;
-    border-color: rgb(160,160,160);
+    background-color: #bebebe;
+    border-color: rgb(160, 160, 160);
     color: #888888;
-  }
+    &:hover {
+      background-color: #bebebe;
+      border-color: rgb(160, 160, 160);
+      color: #888888;
+    }
   }
   &:hover {
     background-color: ${({ theme }) => theme.colors.white[100]};

@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
 import * as React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { type AxiosError } from "axios";
 
 import CustomInput from "@/components/ui/atoms/Input/Input";
 import { useCreateAccount } from "@/redux/hooks";
@@ -24,8 +27,9 @@ function Form() {
     resolver: zodResolver(schema),
   });
   const { mutate: createAccount } = useCreateAccount();
+  const [serverError, setServerError] = React.useState<string | null>(null);
 
-  const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
+  const onSubmit: SubmitHandler<FormFields> = (data) => {
     try {
       const dataCaptured = schema.safeParse(data);
 
@@ -40,15 +44,17 @@ function Form() {
         return;
       }
 
-      createAccount(data, {
-        onSuccess: () => {
+      createAccount(dataCaptured.data, {
+        onSuccess: (responseData) => {
+          console.log("Account created:", responseData);
           reset();
+          setServerError(null); // Limpiar cualquier error previo
         },
-        onError: (error) => {
+        onError: (error: AxiosError | any) => {
           console.error("Error creating account:", error);
-          setError("root", {
-            message: "There was an error while creating the account",
-          });
+          if (error.response.status === 409) {
+            setServerError("El número de cuenta ya existe");
+          }
         },
       });
     } catch (error) {
@@ -57,7 +63,6 @@ function Form() {
       });
     }
   };
-
 
   return (
     <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>
@@ -115,6 +120,11 @@ function Form() {
           />
         </Styled.CustomContainer>
       </Styled.Inputs>
+      {serverError ? (
+        <Styled.Wrapper>
+          <Styled.ErrorMessage>{serverError}</Styled.ErrorMessage>
+        </Styled.Wrapper>
+      ) : null}
 
       <Styled.SubmitButton disabled={isSubmitting || !isValid} type="submit">
         Crear cuenta
