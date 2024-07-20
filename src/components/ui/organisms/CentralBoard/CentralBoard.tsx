@@ -4,8 +4,6 @@ import Form from "@/components/ui/organisms/Form/Form";
 import TableTech from "@/components/ui/molecules/TableTech/TableTech";
 import { MagneticButton } from "@/components/ui/molecules/MagneticButton";
 
-import { StyledArrowTop } from "../../molecules/MagneticButton/MagneticButton.styles";
-
 import * as Styled from "./CentralBoard.styled";
 
 function CentralBoard() {
@@ -26,14 +24,14 @@ function CentralBoard() {
         </Styled.MiddleRight>
         <Styled.MiddleLeft>
           <Styled.ButtonsRepositories>
-            <Styled.ButtonLink>
-              Linkedin <StyledArrowTop size={10} />{" "}
+            <Styled.ButtonLink target="_blank" href="https://www.linkedin.com/in/german-derbes-catoni/">
+              Linkedin <Styled.StyledArrow size={10} />{" "}
             </Styled.ButtonLink>
-            <Styled.ButtonLink>
-              Repositorio del frontend <StyledArrowTop size={10} />
+            <Styled.ButtonLink target="_blank" href="https://github.com/GDC94/magoya">
+              Repositorio del frontend <Styled.StyledArrow size={10} />
             </Styled.ButtonLink>
-            <Styled.ButtonLink>
-              Repositorio del backend <StyledArrowTop size={10} />
+            <Styled.ButtonLink target="_blank" href="https://github.com/GDC94/magoya-backend">
+              Repositorio del backend <Styled.StyledArrow size={10} />
             </Styled.ButtonLink>
           </Styled.ButtonsRepositories>
           <Styled.MagicButtonContent>

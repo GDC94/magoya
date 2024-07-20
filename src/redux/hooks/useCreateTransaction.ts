@@ -1,23 +1,36 @@
-import { useMutation, useQueryClient } from "react-query";
-import { type z } from "zod";
+import { useMutation } from "@tanstack/react-query";
 
 import { AxiosInstance } from "@/lib/api";
 
-import { type transactionSchema, type CreateTransactionResponse } from "../types";
+import {
+  createTransactionSuccess,
+  createTransactionFailure,
+  createTransactionStart,
+} from "../features/transactionSlice";
+import { type TransactionType } from "../types";
+
+import { useAppDispatch } from "./useAppDispatch";
 
 export const useCreateTransaction = () => {
-  const queryClient = useQueryClient();
+  const dispatch = useAppDispatch();
 
-  return useMutation<CreateTransactionResponse, Error, z.infer<typeof transactionSchema>>(
-    async (transaction) => {
-      const response = await AxiosInstance.post<CreateTransactionResponse>("/transactions", transaction);
+  return useMutation({
+    mutationFn: async (transaction: TransactionType) => {
+      dispatch(createTransactionStart());
+      try {
+        const response = await AxiosInstance.post<{ message: string; newBalance: number }>(
+          "/transactions",
+          transaction,
+        );
+        console.log(response)
 
-      return response.data;
+        dispatch(createTransactionSuccess(response.data));
+
+        return response.data;
+      } catch (error) {
+        dispatch(createTransactionFailure("Error creating transaction"));
+        throw error;
+      }
     },
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries("balance");
-      },
-    },
-  );
+  });
 };

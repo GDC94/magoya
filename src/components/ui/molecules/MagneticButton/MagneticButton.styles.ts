@@ -1,14 +1,13 @@
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-import { ArrowTop } from "@/components/ui/commons/imagery";
+import { Logo } from "@/components/ui/commons/imagery";
 import { QUERIES } from "@/styles";
 
 export const GridContainer = styled.div`
   display: grid;
   place-content: center;
   border-radius: 100%;
-  border: 0.3px solid rgba(255, 255, 255, 0.2);
 
   @media ${QUERIES.tabletAndSmaller} {
     display: none;
@@ -16,31 +15,31 @@ export const GridContainer = styled.div`
 `;
 
 export const StyledMotionButton = styled(motion.button)`
-  background-color: hsl(257.81deg 86.49% 85.49%);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 205px;
-  width: 205px;
+  height: 215px;
+  width: 215px;
   place-content: center;
   border: 2px solid black;
   border-radius: 50%;
   transition: background-color 200ms ease-out;
+  background-color: #a3f797;
 
   cursor: pointer;
 
   &:hover {
-    background-color: hsl(262.25deg 58.17% 70%);
+    background-color: #00de67;
     border: 4px dotted ${({ theme }) => theme.colors.dark[100]};
   }
 `;
 
-export const StyledArrowTop = styled(ArrowTop)`
+export const StyledArrowTop = styled(Logo)`
   transform: rotate(45deg);
   position: relative;
   z-index: 10;
-  font-size: 7rem;
+  font-size: 5rem;
   color: white;
   transition: transform 700ms ease-out;
 
@@ -71,6 +70,6 @@ export const StyledYellowCircle = styled.div`
   transform-origin: center;
   transform: scale(0);
   border-radius: 50%;
-  background-color: hsl(47.76deg 100% 50%);
+  background-color: #a3f797;
   transition: transform 300ms ease-out;
 `;

@@ -11,6 +11,7 @@ export const LayoutContainer = styled.div`
   @media print {
     width: 100%;
     min-width: 100%;
+    height: auto;
   }
   @media ${QUERIES.tabletAndSmaller} {
     height: auto;

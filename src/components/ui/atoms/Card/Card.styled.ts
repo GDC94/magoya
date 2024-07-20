@@ -21,8 +21,8 @@ export const AccountContainer = styled.div`
 `;
 
 export const BalanceContainer = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.dark[100]};
-  background-color: hsl(161.35deg 67.27% 78.43%);
+  border: 2px solid ${({ theme }) => theme.colors.dark[100]};
+  background-color: #00de67;
   padding: ${(props) => props.theme.size["0.5"]};
 `;
 

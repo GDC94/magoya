@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 import { FlexBasicConfig, FlexSpaceBetween } from "@/styles/themeParts/flex";
 import { QUERIES, SIZES } from "@/styles";
 
+import { ArrowTop } from "../../commons/imagery";
+
 export const CentralBoardContainer = styled.div`
   width: 80%;
   height: 70%;
@@ -18,9 +20,7 @@ export const CentralBoardContainer = styled.div`
 
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;
-    height: auto;
-    width: 100%;
-    height: 100%;
+    transform: translate(-50%, -69%);
   }
 `;
 
@@ -46,6 +46,7 @@ export const MiddleLeft = styled.div`
   ${FlexSpaceBetween}
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.dark[100]};
   }
 `;
 
@@ -59,11 +60,14 @@ export const ButtonsRepositories = styled.div`
   flex-direction: column;
   padding: ${({ theme }) => theme.size["1"]};
   gap: ${({ theme }) => theme.size["0.25"]};
+  background-image: url("/back.jpeg");
+  background-size: cover;
+  background-position: center;
 
   @media ${QUERIES.tabletAndSmaller} {
     width: 100%;
     border-right: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 1rem;
   }
 `;
 
@@ -79,14 +83,14 @@ export const MagicButtonContent = styled.div`
 
 export const ButtonLink = styled.a`
   width: auto;
-  transition: background-color 0.3s;
-  transition: 1s;
   ${FlexBasicConfig}
   gap: 10px;
-
-  color: ${({ theme }) => theme.colors.dark[100]};
+  background-color: #ffc305;
+  text-decoration: none;
+  color: #092826;
   font-weight: 600;
   cursor: pointer;
+  padding-right: 7px;
 `;
 
 export const MiddleRight = styled.div`
@@ -113,12 +117,13 @@ export const Right = styled.div`
 export const HeaderForm = styled.div`
   padding: ${({ theme }) => theme.size["1"]};
   border-bottom: 3px solid ${({ theme }) => theme.colors.dark[100]};
+  background-color: #092826;
 `;
 
 export const Title = styled.p`
   font-size: clamp(${SIZES["2"]}, 1.6vw + ${SIZES["1.5"]}, ${SIZES["6"]});
   font-weight: bolder;
-  color: ${({ theme }) => theme.colors.dark[100]};
+  color: #00de67;
   text-align: flex-start;
   line-height: 98%;
   letter-spacing: -3.2px;
@@ -133,8 +138,17 @@ export const Title = styled.p`
 export const Brand = styled.span`
   font-size: clamp(${SIZES["2"]}, 1.6vw + ${SIZES["1.5"]}, ${SIZES["6"]});
   font-weight: bolder;
-  color: hsl(359.13deg 83.13% 67.45%);
+  color: #ffc305;
   text-align: flex-start;
   line-height: 98%;
   letter-spacing: -3.2px;
+`;
+
+export const StyledArrow = styled(ArrowTop)`
+  transform: rotate(45deg);
+  position: relative;
+  z-index: 10;
+  font-size: 5rem;
+  color: white;
+  transition: transform 700ms ease-out;
 `;
