@@ -1,8 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+# Magoya Frontend
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+🍋 Frontend Mobile challenge 🍋
 
-## Getting Started
+## 🕺 Cómo levantar el proyecto
 
-First, run the development server:
+```bash
+
+# Clonar el repositorio.
+
+https://github.com/GDC94/magoya.git
+
+# Instalar las dependencias
+
+
+```bash
+npm i
+# or
+yarn
+# or
+pnpm add
+
+```
+
+# y luego Levantar el proyecto
+
 
 ```bash
 npm run dev
@@ -10,6 +34,17 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
+
 ```
+
+## Tecnologías utilizadas
+
+- [React]()
+- [Next]()
+- [Typescript](https://www.typescriptlang.org)
+- [Styled components](https://www.typescriptlang.org)
+- [zod]()
+- [react hook form](https://www.typescriptlang.org)
+- [React query](https://www.typescriptlang.org)
+- [Redux toolkit](https://www.typescriptlang.org)
+

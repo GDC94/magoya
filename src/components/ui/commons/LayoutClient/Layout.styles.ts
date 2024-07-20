@@ -13,7 +13,7 @@ export const LayoutContainer = styled.div`
     min-width: 100%;
   }
   @media ${QUERIES.tabletAndSmaller} {
-    height: 110vh;
+    height: auto;
   }
 `;
 

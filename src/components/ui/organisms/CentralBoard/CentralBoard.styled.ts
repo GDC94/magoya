@@ -19,6 +19,8 @@ export const CentralBoardContainer = styled.div`
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;
     height: auto;
+    width: 100%;
+    height: 100%;
   }
 `;
 
