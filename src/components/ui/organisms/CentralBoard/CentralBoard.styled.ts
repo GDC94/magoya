@@ -6,7 +6,6 @@ import { QUERIES, SIZES } from "@/styles";
 export const CentralBoardContainer = styled.div`
   width: 80%;
   height: 70%;
-  background-color: transparent;
   margin: 0 auto;
   position: absolute;
   top: 50%;
@@ -19,6 +18,7 @@ export const CentralBoardContainer = styled.div`
 
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;
+    height: auto;
   }
 `;
 
@@ -92,7 +92,7 @@ export const MiddleRight = styled.div`
   width: 100%;
   padding: ${({ theme }) => theme.size["1"]};
   position: relative;
-  border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.dark[100]};
 `;
 
 export const Right = styled.div`

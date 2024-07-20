@@ -24,13 +24,13 @@ export const TOOLS_LEFT: Tool[] = [
     name: "Redux",
     id: 5,
   },
-];
-
-export const TOOLS_RIGHT: Tool[] = [
   {
     name: "Tanstack Query",
     id: 6,
   },
+];
+
+export const TOOLS_RIGHT: Tool[] = [
   {
     name: "Zod",
     id: 8,
@@ -39,9 +39,6 @@ export const TOOLS_RIGHT: Tool[] = [
     name: "Emotion",
     id: 10,
   },
-];
-
-export const TOOLS_BACK: Tool[] = [
   {
     name: "Express",
     id: 11,
@@ -55,3 +52,4 @@ export const TOOLS_BACK: Tool[] = [
     id: 13,
   },
 ];
+

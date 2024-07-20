@@ -4,6 +4,7 @@ import * as React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type AxiosError } from "axios";
+import { useRouter } from "next/navigation";
 
 import CustomInput from "@/components/ui/atoms/Input/Input";
 import { useCreateAccount } from "@/redux/hooks";
@@ -28,7 +29,7 @@ function Form() {
   });
   const { mutate: createAccount } = useCreateAccount();
   const [serverError, setServerError] = React.useState<string | null>(null);
-
+  const router = useRouter();
   const onSubmit: SubmitHandler<FormFields> = (data) => {
     try {
       const dataCaptured = schema.safeParse(data);
@@ -48,7 +49,10 @@ function Form() {
         onSuccess: (responseData) => {
           console.log("Account created:", responseData);
           reset();
-          setServerError(null); // Limpiar cualquier error previo
+          setServerError(null);
+          setTimeout(() => {
+            router.push("/AccountPage");
+          }, 2000);
         },
         onError: (error: AxiosError | any) => {
           console.error("Error creating account:", error);

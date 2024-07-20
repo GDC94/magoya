@@ -32,13 +32,13 @@ export default function RootLayout({
         <meta property="og:description" content="Magoyapp | Front-end dev challenge" />
       </head>
       <StyledComponentsRegistry>
-        <ThemeClient>
-          <ReduxProvider>
+        <ReduxProvider>
+          <ThemeClient>
             <QueryClientProviderWrapper>
               <body>{children}</body>
             </QueryClientProviderWrapper>
-          </ReduxProvider>
-        </ThemeClient>
+          </ThemeClient>
+        </ReduxProvider>
       </StyledComponentsRegistry>
     </html>
   );

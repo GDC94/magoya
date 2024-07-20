@@ -4,7 +4,7 @@ export interface CreateAccountResponse {
   id: number;
   name: string;
   accountNumber: string;
-  initialBalance: number;
+  initialBalance: string;
 }
 
 export interface GetBalanceResponse {

@@ -2,12 +2,17 @@ import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
 import { ArrowTop } from "@/components/ui/commons/imagery";
+import { QUERIES } from "@/styles";
 
 export const GridContainer = styled.div`
   display: grid;
   place-content: center;
   border-radius: 100%;
   border: 0.3px solid rgba(255, 255, 255, 0.2);
+
+  @media ${QUERIES.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 export const StyledMotionButton = styled(motion.button)`
@@ -16,8 +21,8 @@ export const StyledMotionButton = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 220px;
-  width: 220px;
+  height: 205px;
+  width: 205px;
   place-content: center;
   border: 2px solid black;
   border-radius: 50%;

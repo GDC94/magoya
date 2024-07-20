@@ -1,11 +1,15 @@
 import * as React from "react";
+import { useSelector } from "react-redux";
 
-import Logo from "../../atoms/Logo/Logo";
+import { type RootState } from "@/redux/store";
+import Logo from "@/components/ui/atoms/Logo/Logo";
 
 import * as Styled from "./TableTech.styled";
-import { type Tool, TOOLS_BACK, TOOLS_LEFT, TOOLS_RIGHT } from "./TableTech.types";
+import { type Tool, TOOLS_LEFT, TOOLS_RIGHT } from "./TableTech.types";
 
 function TableTech() {
+  const accounts = useSelector((state: RootState) => state);
+
   return (
     <>
       <Styled.HeaderTop>
@@ -33,13 +37,6 @@ function TableTech() {
           ))}
         </Styled.ItemsRight>
       </Styled.TechTable>
-      <Styled.Divider />
-      <Styled.Paragraph>Para el armado del backend:</Styled.Paragraph>
-      <Styled.ItemsBack>
-        {TOOLS_BACK.map((tool: Tool) => (
-          <Styled.Item key={tool.id}>● {tool.name}</Styled.Item>
-        ))}
-      </Styled.ItemsBack>
     </>
   );
 }
