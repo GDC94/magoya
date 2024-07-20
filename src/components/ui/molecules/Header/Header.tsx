@@ -1,5 +1,4 @@
 import * as React from "react";
-import Link from "next/link";
 
 import Logo from "@/components/ui/atoms/Logo/Logo";
 
@@ -9,7 +8,6 @@ function Header() {
   return (
     <Styled.HeaderContainer>
       <Logo />
-      <Link href="/AccountPage">Account</Link>
     </Styled.HeaderContainer>
   );
 }

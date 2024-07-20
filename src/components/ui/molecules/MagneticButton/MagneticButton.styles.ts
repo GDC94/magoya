@@ -5,7 +5,6 @@ import { ArrowTop } from "@/components/ui/commons/imagery";
 
 export const GridContainer = styled.div`
   display: grid;
-  padding: 3rem;
   place-content: center;
   border-radius: 100%;
   border: 0.3px solid rgba(255, 255, 255, 0.2);

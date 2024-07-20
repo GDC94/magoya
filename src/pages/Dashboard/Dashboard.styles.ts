@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const DashboardContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   @media print {
@@ -20,5 +20,5 @@ export const ContainerBottom = styled.div`
   height: 35%;
   border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   border-top: 0px;
-  background-color: ${({ theme }) => theme.colors.secondary[200]};
+  background-color: ${({ theme }) => theme.colors.white[100]};
 `;

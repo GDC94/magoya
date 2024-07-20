@@ -88,7 +88,7 @@ export const ButtonLink = styled.a`
 `;
 
 export const MiddleRight = styled.div`
-  height: 100%;
+  height: auto;
   width: 100%;
   padding: ${({ theme }) => theme.size["1"]};
   position: relative;
@@ -116,7 +116,7 @@ export const HeaderForm = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: clamp(${SIZES["2"]}, 2vw + ${SIZES["2"]}, ${SIZES["7"]});
+  font-size: clamp(${SIZES["2"]}, 1vw + ${SIZES["2"]}, ${SIZES["7"]});
   font-weight: bolder;
   color: ${({ theme }) => theme.colors.white[100]};
   text-align: flex-start;

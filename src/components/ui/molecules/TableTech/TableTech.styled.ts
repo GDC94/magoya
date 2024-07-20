@@ -68,7 +68,6 @@ export const ItemsBack = styled.div`
   width: 50%;
   gap: 10px;
   ${FlexStartConfig}
-  padding-left: ${({ theme }) => theme.size["0.5"]};
 
   @media ${QUERIES.tabletAndSmaller} {
     flex-direction: column;
