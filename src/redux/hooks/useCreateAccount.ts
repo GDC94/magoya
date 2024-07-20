@@ -1,13 +1,14 @@
 import { type z } from "zod";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 
 import { AxiosInstance } from "@/lib/api";
 
-import { type accountSchema, type CreateAccountResponse } from "../types";
+
+import { type CreateAccountResponse } from "../types"; // Ajusta la ruta si es necesario
 
 export const useCreateAccount = () => {
-  return useMutation<CreateAccountResponse, Error, z.infer<typeof accountSchema>>(async (account) => {
-    const response = await AxiosInstance.post<CreateAccountResponse>("/accounts", account);
+  return useMutation<CreateAccountResponse, Error, z.infer<typeof AccountZodSchemaType>>(async (account) => {
+    const response = await AxiosInstance.post<CreateAccountResponse>("/account", account);
 
     return response.data;
   });

@@ -88,11 +88,10 @@ export const ButtonLink = styled.a`
 `;
 
 export const MiddleRight = styled.div`
-  height: auto;
+  height: 100%;
   width: 100%;
   padding: ${({ theme }) => theme.size["1"]};
   position: relative;
-  background-color: #f3e281ba;
   border-bottom: 5px solid ${({ theme }) => theme.colors.dark[100]};
 `;
 
@@ -111,27 +110,26 @@ export const Right = styled.div`
 
 export const HeaderForm = styled.div`
   padding: ${({ theme }) => theme.size["1"]};
-  border-bottom: 5px solid ${({ theme }) => theme.colors.quaternary[100]};
-  background-color: black;
+  border-bottom: 3px solid ${({ theme }) => theme.colors.dark[100]};
 `;
 
 export const Title = styled.p`
-  font-size: clamp(${SIZES["2"]}, 1vw + ${SIZES["2"]}, ${SIZES["7"]});
+  font-size: clamp(${SIZES["2"]}, 1.6vw + ${SIZES["1.5"]}, ${SIZES["6"]});
   font-weight: bolder;
-  color: ${({ theme }) => theme.colors.white[100]};
+  color: ${({ theme }) => theme.colors.dark[100]};
   text-align: flex-start;
   line-height: 98%;
   letter-spacing: -3.2px;
 
   @media ${QUERIES.tabletAndSmaller} {
     text-align: center;
-    max-width: 90%;
+    max-width: 95%;
     margin: 0 auto;
   }
 `;
 
 export const Brand = styled.span`
-  font-size: ${({ theme }) => theme.size["3.25"]};
+  font-size: clamp(${SIZES["2"]}, 1.6vw + ${SIZES["1.5"]}, ${SIZES["6"]});
   font-weight: bolder;
   color: hsl(359.13deg 83.13% 67.45%);
   text-align: flex-start;

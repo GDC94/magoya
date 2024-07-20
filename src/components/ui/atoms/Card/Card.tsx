@@ -1,9 +1,15 @@
 import * as React from "react";
 
+import { useGetBalance } from "@/redux/hooks";
+
 import * as Styled from "./Card.styled";
 import { type CardProps } from "./Card.types";
 
 function Card({ name = "German Derbes", accountNumber = 1994, balance = 12560 }: CardProps) {
+  const { data } = useGetBalance("1");
+
+  console.log("soy la data del back", data);
+
   return (
     <Styled.CardContainer>
       <Styled.Top>

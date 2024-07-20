@@ -1,13 +1,18 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import { AxiosInstance } from "@/lib/api";
 
 import { type GetBalanceResponse } from "../types";
 
-export const useGetBalance = (accountId: string) => {
-  return useQuery<GetBalanceResponse, Error>(["balance", accountId], async () => {
-    const response = await AxiosInstance.get<GetBalanceResponse>(`/accounts/${accountId}/balance`);
+const fetchBalance = async (accountId: string): Promise<GetBalanceResponse> => {
+  const response = await AxiosInstance.get<GetBalanceResponse>(`/account-balance/${accountId}`);
 
-    return response.data;
+  return response.data;
+};
+
+export const useGetBalance = (accountId: string) => {
+  return useQuery({
+    queryKey: ["balance", accountId],
+    queryFn: () => fetchBalance(accountId),
   });
 };

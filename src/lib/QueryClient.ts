@@ -4,13 +4,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
-      retry: (failureCount) => {
-        if (failureCount >= 3) {
-          return false;
-        }
-
-        return true;
-      },
+      retry: (failureCount) => failureCount < 3,
     },
   },
 });

@@ -70,8 +70,7 @@ export const ItemsBack = styled.div`
   ${FlexStartConfig}
 
   @media ${QUERIES.tabletAndSmaller} {
-    flex-direction: column;
-    gap: 0px;
+    gap: 2px;
     padding-left: 0px;
   }
 `;

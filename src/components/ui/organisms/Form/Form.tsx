@@ -3,6 +3,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import CustomInput from "@/components/ui/atoms/Input/Input";
+import { useCreateAccount } from "@/redux/hooks";
 
 import * as Styled from "./Form.styled";
 import { schema, type FormFields } from "./Form.types";
@@ -22,6 +23,7 @@ function Form() {
     },
     resolver: zodResolver(schema),
   });
+  const { mutate: createAccount } = useCreateAccount();
 
   const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
     try {
@@ -37,13 +39,25 @@ function Form() {
 
         return;
       }
-      reset();
+
+      createAccount(data, {
+        onSuccess: () => {
+          reset();
+        },
+        onError: (error) => {
+          console.error("Error creating account:", error);
+          setError("root", {
+            message: "There was an error while creating the account",
+          });
+        },
+      });
     } catch (error) {
       setError("root", {
         message: "There was an error while submitting the form",
       });
     }
   };
+
 
   return (
     <Styled.FormWrapper onSubmit={handleSubmit(onSubmit)}>

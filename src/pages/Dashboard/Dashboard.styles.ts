@@ -17,6 +17,7 @@ export const ContainerTop = styled.div`
 `;
 
 export const ContainerBottom = styled.div`
+  min-height: 35%;
   height: 35%;
   border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   border-top: 0px;

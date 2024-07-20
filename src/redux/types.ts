@@ -1,10 +1,9 @@
 import { z } from "zod";
 
 export interface CreateAccountResponse {
-  id: string;
   name: string;
-  account_number: string;
-  balance: number;
+  accountNumber: string;
+  initialBalance: number;
 }
 
 export interface GetBalanceResponse {
@@ -19,8 +18,9 @@ export interface CreateTransactionResponse {
 }
 
 export const accountSchema = z.object({
-  name: z.string(),
-  account_number: z.string().length(4),
+  name: z.string().min(1, "Name is required"),
+  initialBalance: z.string().min(1, "Initial balance is required"),
+  accountNumber: z.string().min(1, "Account number is required"),
 });
 
 export const transactionSchema = z.object({
@@ -28,3 +28,5 @@ export const transactionSchema = z.object({
   type: z.enum(["deposit", "withdrawal"]),
   amount: z.number().positive(),
 });
+
+export type AccountZodSchemaType = z.infer<typeof accountSchema>;
