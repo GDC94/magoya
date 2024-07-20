@@ -40,7 +40,6 @@ function TransactionCard() {
         accountNumber,
       };
 
-      console.log("Transaction Object:", transaction);
       createTransaction(transaction, {
         onSuccess: (response) => {
           console.log("Transaction created:", response);
