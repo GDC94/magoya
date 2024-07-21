@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface AccountState {
   accounts: Record<
-    string,
+    number,
     {
       id: number;
       name: string;
@@ -12,12 +12,18 @@ interface AccountState {
   >;
   loading: boolean;
   error: string | null;
+  lastCreatedAccount: {
+    id: number | null;
+    name: string;
+    accountNumber: string;
+  } | null; 
 }
 
 const initialState: AccountState = {
   accounts: {},
   loading: false,
   error: null,
+  lastCreatedAccount: null,
 };
 
 const accountSlice = createSlice({
@@ -40,6 +46,11 @@ const accountSlice = createSlice({
       const { id, ...accountData } = action.payload;
 
       state.accounts[id] = { id, ...accountData };
+      state.lastCreatedAccount = {
+        id,
+        name: accountData.name,
+        accountNumber: accountData.accountNumber,
+      };
       state.loading = false;
     },
     createAccountFailure(state, action: PayloadAction<string>) {

@@ -32,4 +32,12 @@ export const transactionSchema = z.object({
   amount: z.number().positive(),
 });
 
+export type TransactionType = z.infer<typeof transactionSchema>;
+
 export type AccountZodSchemaType = z.infer<typeof accountSchema>;
+
+export interface AccountState {
+  accounts: Record<number, CreateAccountResponse>;
+  loading: boolean;
+  error: string | null;
+}

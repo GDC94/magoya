@@ -1,15 +1,11 @@
 import * as React from "react";
-import { useSelector } from "react-redux";
 
-import { type RootState } from "@/redux/store";
 import Logo from "@/components/ui/atoms/Logo/Logo";
 
 import * as Styled from "./TableTech.styled";
 import { type Tool, TOOLS_LEFT, TOOLS_RIGHT } from "./TableTech.types";
 
 function TableTech() {
-  const accounts = useSelector((state: RootState) => state);
-
   return (
     <>
       <Styled.HeaderTop>

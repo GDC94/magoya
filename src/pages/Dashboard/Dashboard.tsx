@@ -2,7 +2,6 @@
 import React from "react";
 
 import { Layout } from "@/components/ui/commons/LayoutClient";
-import Header from "@/components/ui/molecules/Header/Header";
 import CentralBoard from "@/components/ui/organisms/CentralBoard/CentralBoard";
 
 import * as Styled from "./Dashboard.styles";
@@ -11,9 +10,7 @@ function Dashboard() {
   return (
     <Layout>
       <Styled.DashboardContainer>
-        <Styled.ContainerTop>
-          <Header />
-        </Styled.ContainerTop>
+        <Styled.ContainerTop />
         <Styled.ContainerBottom />
         <CentralBoard />
       </Styled.DashboardContainer>

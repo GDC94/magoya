@@ -1,1 +1,1 @@
-export { ArrowTop, LogoIcon } from "./imagery";
+export { Logo, ArrowTop } from "./imagery";

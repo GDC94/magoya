@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 interface Transaction {
@@ -10,12 +11,14 @@ interface TransactionState {
   transactions: Record<string, Transaction[]>;
   loading: boolean;
   error: string | null;
+  newBalance: number | null; // Para almacenar el nuevo saldo
 }
 
 const initialState: TransactionState = {
   transactions: {},
   loading: false,
   error: null,
+  newBalance: null,
 };
 
 const transactionSlice = createSlice({
@@ -26,8 +29,8 @@ const transactionSlice = createSlice({
       state.loading = true;
       state.error = null;
     },
-    createTransactionSuccess(state, action: PayloadAction<{ accountId: string; transactions: Transaction[] }>) {
-      state.transactions[action.payload.accountId] = action.payload.transactions;
+    createTransactionSuccess(state, action: PayloadAction<{ message: string; newBalance: number }>) {
+      state.newBalance = action.payload.newBalance; // Almacena el nuevo saldo
       state.loading = false;
     },
     createTransactionFailure(state, action: PayloadAction<string>) {

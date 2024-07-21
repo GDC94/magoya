@@ -50,13 +50,21 @@ export const TransactionHeader = styled.h5`
 `;
 
 export const FormWrapper = styled.form`
-  padding: ${({ theme }) => theme.size["1"]};
   height: 85%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media ${QUERIES.tabletAndSmaller} {
     border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   }
+`;
+
+export const ErrorMessage = styled.span`
+  color: red;
+  font-size: ${({ theme }) => theme.size["0.75"]};
+  font-weight: 500;
 `;
 
 export const FooterCard = styled.div`
@@ -64,6 +72,12 @@ export const FooterCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.dark[100]};
   height: 15%;
   width: 100%;
+`;
+export const Wrapper = styled.span`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ButtonSubmit = styled.button`
@@ -74,7 +88,7 @@ export const ButtonSubmit = styled.button`
   cursor: "pointer";
   outline: none;
   display: inline-block;
-  padding: ${(props) => props.theme.size["0.5"]} ${(props) => props.theme.size["2"]};
+  padding: ${(props) => props.theme.size["0.875"]} ${(props) => props.theme.size["2"]};
   transition: background-color 0.3s;
   transition: 0.5s;
   color: white;

@@ -9,13 +9,14 @@ export const BalanceCardContainer = styled.div`
   ${FlexSpaceBetween}
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
   padding: ${({ theme }) => theme.size["1"]};
   border: 2px solid ${({ theme }) => theme.colors.dark[100]};
 `;
 
 export const HeroTop = styled.div`
   width: 100%;
-  background-color: hsl(262.25deg 58.17% 70%);
+  background-color: #092826;
   height: auto;
   padding: ${({ theme }) => theme.size["1"]};
   border: 1px solid ${({ theme }) => theme.colors.dark[100]};
@@ -39,7 +40,7 @@ export const WelcomeMessage = styled.h3`
 
 export const WelcomeSubMessage = styled.p`
   font-size: ${({ theme }) => theme.size["1.25"]};
-  color: ${({ theme }) => theme.colors.dark[100]};
+  color: #00de67;
   font-weight: bold;
   letter-spacing: -1px;
 `;

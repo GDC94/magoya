@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import * as React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSelector } from "react-redux";
 
+import { useCreateTransaction } from "@/redux/hooks";
 import { CustomInput } from "@/components/ui/atoms/Input";
 import Logo from "@/components/ui/atoms/Logo/Logo";
+import { type RootState } from "@/redux/store";
 
 import * as Styled from "./TransactionCard.styled";
 import { type TransactionFormFields, transactionSchema } from "./TransactionCard.types";
@@ -22,9 +26,32 @@ function TransactionCard() {
     resolver: zodResolver(transactionSchema),
   });
 
+  const { mutate: createTransaction } = useCreateTransaction();
+  const [serverError, setServerError] = React.useState<string | null>(null);
+
+  const lastCreatedAccount = useSelector((state: RootState) => state.account.lastCreatedAccount);
+  const accountNumber = lastCreatedAccount?.accountNumber || "";
+
+  console.log("accountNumber", accountNumber);
+
   const onSubmit: SubmitHandler<TransactionFormFields> = (data) => {
     try {
-      console.log(data);
+      const transaction = {
+        type: data.transactionType,
+        amount: parseFloat(data.amount),
+        accountNumber,
+      };
+
+      console.log("Transaction Object:", transaction);
+      createTransaction(transaction, {
+        onSuccess: (response) => {
+          console.log("Transaction created:", response);
+        },
+        onError: (error) => {
+          console.error("Error creating transaction:", error);
+          setServerError("Error creating transaction. Please try again.");
+        },
+      });
     } catch (error) {
       setError("root", {
         message: "There was an error while submitting the form",
@@ -73,11 +100,16 @@ function TransactionCard() {
             errors={errors}
           />
         </Styled.InputsWrapper>
+        {serverError ? (
+          <Styled.Wrapper>
+            <Styled.ErrorMessage>{serverError}</Styled.ErrorMessage>
+          </Styled.Wrapper>
+        ) : null}
         <Styled.ButtonSubmit disabled={isSubmitting} type="submit">
           Enviar
         </Styled.ButtonSubmit>
+        {errors.root ? <Styled.ErrorMessage>{errors.root.message}</Styled.ErrorMessage> : null}
       </Styled.FormWrapper>
-      <Styled.FooterCard />
     </Styled.TransactionCardContainer>
   );
 }

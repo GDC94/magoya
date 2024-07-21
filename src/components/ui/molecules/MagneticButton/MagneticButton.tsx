@@ -32,8 +32,8 @@ function MagnetButton() {
       >
         <path d="M100,100 m-100,0 a100,100 0 1,0 200,0 a100,100 0 1,0 -200,0" fill="none" id="circlePath" />
         <text>
-          <StyledTextPath href="#circlePath" letterSpacing="2.8px">
-            Repositorio-Repositorio-Repositorio-Repositorio
+          <StyledTextPath href="#circlePath" letterSpacing="2.5px">
+            Magoyapp Magoyapp Magoyapp Magoyapp Magoyapp
           </StyledTextPath>
         </text>
       </StyledSvg>
